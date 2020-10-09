@@ -1,0 +1,51 @@
+﻿@{
+    //Layout = null;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Home Page";
+}
+
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Книжный магазин</title>
+    <style type="text/css">
+        .content {
+            float: left;
+            color: blue;
+            width: 80%;
+        }
+
+        .catalog {
+            float: left;
+            color: red;
+            width: 20%;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="wrapper">
+            <h3>Распродажа книг</h3>
+            <div class="catalog">
+                @Html.Action("_TreeList2", "Home")
+                @Html.Action("_TreeList", "Home")
+            </div>
+            <main class="content" id="bestbook">
+
+                @*@foreach (var b in ViewBag.Books)
+                    {
+                            @b.Name
+                            @b.Author
+                            @b.Price
+                            <a href="/Home/Buy/@b.Id">Купить</a>
+                           <br />
+                        }*@
+            </main>
+        <div id="list_items">111</div>
+        </div><!-- .wrapper -->
+    </div><!-- .container -->
+</body>
+</html>
