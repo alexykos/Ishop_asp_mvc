@@ -201,11 +201,13 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="ViewModels\ClassListModel.cs" />
+    <Compile Include="ViewModels\Commodity_property.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\PagedList.css" />
+    <Content Include="Content\styles.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -247,6 +249,10 @@
     <Content Include="Views\Home\BestBook.cshtml" />
     <Content Include="Views\Home\_TreeList.cshtml" />
     <Content Include="Views\Home\IndexClassPart.cshtml" />
+    <Content Include="Views\Home\Commodity.cshtml" />
+    <Content Include="Views\Home\Contacts.cshtml" />
+    <Content Include="Views\Home\Delivery.cshtml" />
+    <Content Include="Views\Home\breadcrumbs_tree.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

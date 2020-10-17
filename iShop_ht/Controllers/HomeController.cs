@@ -118,5 +118,65 @@ namespace iShop_ht.Controllers
 
         }
 
+        [HttpGet]
+        public ActionResult Commodity(int id = 0)
+        {
+
+            var commodity2 = from cm in StoreDB.I_commodities
+                             join img in StoreDB.I_images on cm.Code equals img.Upcode
+                             where cm.Code == id && img.Ext == "txt"
+                             select new Commodity_property { Code = cm.Code, Name = cm.Name, Price = cm.Price, Property = img.Img };
+
+
+
+            return View(commodity2);
+
+        }
+        [HttpGet]
+        public ActionResult Contacts(int id = 0)
+        {
+           
+            return View();
+
+        }
+
+        [HttpGet]
+        public ActionResult About(int id = 0)
+        {
+
+            return View();
+
+        }
+        [HttpGet]
+        public ActionResult Delivery(int id = 0)
+        {
+
+            return View();
+
+        }
+
+        public void ReturnImage(int id)
+
+        {
+
+            var Images = StoreDB.I_images.Where(x => x.Upcode == id && x.Ext == "JPG").FirstOrDefault();
+            var img = Images.Img150x150;
+        }
+
+        [ChildActionOnly]
+        public ActionResult breadcrumbs_tree()
+        {
+            int currentClass = 0;
+            if (TempData["currentClass"] != null)
+            {
+                currentClass = int.Parse(TempData["currentClass"].ToString());
+                TempData.Keep();
+            }
+            System.Data.SqlClient.SqlParameter param = new System.Data.SqlClient.SqlParameter("currentClass", currentClass);
+            var I_classes = StoreDB.Database.SqlQuery<I_class>("GetBreadcrumbs_tree	@currentClass", param);
+
+            return PartialView(I_classes);
+        }
+
     }
 }

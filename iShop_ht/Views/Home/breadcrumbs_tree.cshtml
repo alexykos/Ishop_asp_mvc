@@ -1,0 +1,21 @@
+﻿
+@model IEnumerable<iShop_source.Models.I_class>
+
+
+<div class="breadcrumbs">
+    @if (Model != null)
+    {
+
+        <span class="sep"></span>
+        @Html.ActionLink("Главная", "IndexClass", "Home", new { Id = 0 }, null)
+        @*<a href="#">@node.Name</a>*@
+        <span class="arrow"></span>
+        foreach (var node in Model)
+        {
+            <span class="sep"></span>
+            @Html.ActionLink(@node.Name, "IndexClass", "Home", new { Id = @node.Code }, null)
+            @*<a href="#">@node.Name</a>*@
+            <span class="arrow"></span>
+        }
+    }
+</div>
