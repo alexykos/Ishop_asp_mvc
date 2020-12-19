@@ -1,0 +1,163 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css" />
+
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+    <link href=@Url.Content("~/Content/styles.css") rel="stylesheet" />
+    <link href=@Url.Content("~/Content/PagedList.css") rel="stylesheet" />
+    <link href=@Url.Content("~/Content/bootstrap.css") rel="stylesheet" />
+    <link href=@Url.Content("~/Content/bootstrap.min.css") rel="stylesheet" />
+
+    <link href=@Url.Content("~/scripts/callmewidget/style.min.css") rel="stylesheet" />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    @Scripts.Render("~/scripts/slick.min.js")
+    @Scripts.Render("~/scripts/scripts.js")
+    @Scripts.Render("~/scripts/new_script.js")
+    @Scripts.Render("~/scripts/dinamik.js")
+    @Scripts.Render("~/scripts/jquery.inputmask.js")
+
+
+    @Scripts.Render("~/scripts/callmewidget/detectWebRTC.min.js")
+    @Scripts.Render("~/scripts/callmewidget/jssip.min.js")
+    @Scripts.Render("~/scripts/callmewidget/widget.min.js")
+    @Scripts.Render("~/scripts/callmewidget/style.min.css")
+
+
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="wrapper">
+
+            <header class="header">
+
+                <a href="\" class="header__logo">
+                    <div class="header__logo-title">Гипертрейд</div>
+                    <div class="header__logo-desc">техника и компьютерные комплектующие</div>
+                </a>
+
+                <div class="header__nav-toggle"></div>
+                <nav class="header__nav">
+                    <ul>
+                        <li><a href="#">Гарантия</a></li>
+                        <li><a href="/Home/Delivery">Доставка</a></li>
+                        <li><a href="/Home/Contacts">Контакты</a></li>
+                        <li><a href="/Home/About">О компании</a></li>
+                        <li><a href="#">Оптовикам</a></li>
+                    </ul>
+
+                </nav>
+
+
+                <div class="header__phone">
+                    <div class="header__phone-number">8 (499) 558-08-99;</div>
+                    <div class="header__phone-number">8 (495) 789-52-39</div>
+                </div>
+
+                <a href="/ShoppingCart/Index" id="link_basket">
+                    <div class="header__cart">
+                        <div class="header__cart-title">Корзина заказов</div>
+                        <div id="header__cart-count-2" class="header__cart-count-2">@Html.Action("CartSummary", "ShoppingCart")</div>
+
+                    </div><!-- .header__cart -->
+                </a>
+
+                <form action="" method="post" class="search-form">
+                    <input type="text" class="search-form__field" />
+                    <input type="submit" value="" class="search-form__button" />
+                </form>
+
+            </header><!-- .header -->
+
+            <div class="middle">
+                <script type="text/javascript">
+    $(function () {
+
+        $(".item__buy, .product__buy").click(function () {
+
+            var recordToAdd = $(this).attr("data-id");
+            //alert("recordToAdd =" + recordToAdd);
+            if (recordToAdd != '') {
+
+                $.post("/ShoppingCart/AddToCart", { "id": recordToAdd },
+                    function (data) {
+                        $('.header__cart-count-2').text(data.CartCount);
+                        $('a[data-id='+recordToAdd+']').toggleClass(".item__buy a_visited");
+
+                                 });
+
+            };
+        });
+    });
+
+                </script>
+
+
+                <div class="breadcrumbs">
+                    @*@Html.MvcSiteMap().SiteMapPath()
+                        @Html.MvcSiteMap().Menu(0,1)*@
+                </div><!-- .breadcrumbs -->
+                @*@Html.MvcSiteMap().Menu(2, 1)*@
+
+
+
+
+                @RenderBody()
+            </div><!-- .middle -->
+
+            <footer class="footer">
+
+                <div class="footer__top">
+
+                    <nav class="footer__nav">
+                        <ul>
+                            <li><a href="#">Гарантия</a></li>
+                            <li><a href="/Home/Delivery">Доставка</a></li>
+                            <li><a href="/Home/Contacts">Контакты</a></li>
+                            <li><a href="/Home/About">О компании</a></li>
+                            <li><a href="#">Оптовикам</a></li>
+                        </ul>
+                    </nav>
+
+                    @*<ul class="footer__soc">
+                            <li><a href="#" class="vk">ВКонтакте</a></li>
+                            <li><a href="#" class="ok">Одноклассники</a></li>
+                            <li><a href="#" class="fb">Facebook</a></li>
+                            <li><a href="#" class="tw">Twitter</a></li>
+                            <li><a href="#" class="gp">Google Plus</a></li>
+                            <li><a href="#" class="yt">YouTube</a></li>
+                        </ul>*@
+
+                </div><!-- .footer__top -->
+
+                <div class="footer__bottom">
+
+                    <div class="footer__copyright">Гипер Трейд<br /> Все права защищены, 2017 г.</div>
+
+                    <div class="footer__contacts">
+                        <p>ТК "Савеловский, павилионы: E-12, F-63</p>
+                        <p>Телефоны: <span class="footer__contacts-phones">(499)558-08-99, (495)789-5239</span></p>
+                        <p>Почта: info@ht-comp.ru</p>
+                        <p class="footer__contacts-time">Работаем с 10-00 до 21-00 без выходных<br /> и перерыва на обед</p>
+                    </div><!-- .footer__contacts -->
+
+                </div><!-- .footer__bottom -->
+
+            </footer><!-- .footer -->
+
+        </div><!-- .wrapper -->
+    </div><!-- .container -->
+
+
+</body>
+</html>

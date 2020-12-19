@@ -1,0 +1,88 @@
+﻿@*@model IEnumerable<iShop_ht.Models.I_commodity>*@
+@model PagedList.IPagedList<iShop_ht.Models.I_commodity>
+@using PagedList.Mvc;
+
+
+
+@*<h1></h1>*@
+
+<div class="breadcrumbs">
+    @*<a href="#">Главная</a> <span class="arrow"></span>*@
+    @Html.Action("breadcrumbs_tree", "Home")
+</div><!-- .breadcrumbs -->
+
+<div class="sort">
+    <div class="sort__title">Сортировать по:</div>
+    <ul>
+        <li><a href="#">популярности</a></li>
+        <li><a href="#">цене@*@Html.ActionLink("цене", "IndexSort", new { sortOrder = ViewBag.PriceSortParm })*@</a></li>
+        <li><a href="#">новинкам</a></li>
+    </ul>
+    <div class="sort__button flex">
+        <p class="sort__button_left sort__button_active"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMyIgaGVpZ2h0PSIxMyIgdmlld0JveD0iMCAwIDEzIDEzIiBmaWxsPSIjMmIyYjJiIj48cGF0aCBkPSJNMCAxMGgzdjNoLTN6TTUgMTBoOHYzaC04ek0wIDVoM3YzaC0zek01IDVoOHYzaC04ek0wIDBoM3YzaC0zek01IDBoOHYzaC04eiIvPjwvc3ZnPgo=" alt=""></p>
+        <p class="sort__button_right"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMyIgaGVpZ2h0PSIxMyIgdmlld0JveD0iMCAwIDEzIDEzIiBmaWxsPSIjMmIyYjJiIj48cGF0aCBkPSJNMCAwaDZ2NmgtNnpNNyAwaDZ2NmgtNnpNNyA3aDZ2NmgtNnpNMCA3aDZ2NmgtNnoiLz48L3N2Zz4K" alt=""></p>
+    </div>
+</div><!-- .sort -->
+
+<div class="items">
+    @{foreach (var line in Model)
+        {
+            <div class="item">
+                <div class="item__title">
+                    @*<a href="/Home/Commodity/@line.Code">@line.Name</a>*@
+                    @Ajax.ActionLink(@line.Name, "Commodity", "Home", new { Id = @line.Code }, new AjaxOptions { UpdateTargetId = "ContentId" })
+                    
+
+                </div>
+                <div class="item__image"><img src='@Url.Action("GetImage", "Image", new { id = @line.Code, img = "150" } )' width="188" height="188" alt="" /></div>
+                <div class="item__bottom">
+                    <div class="item__price"><span>@line.Price.ToString("### ### ###")</span> <span class="rubl">&#8399;</span></div>
+                    <a href="#" class="item__buy" data-id="@line.Code"></a>
+                </div><!-- .item__bottom -->
+            </div>
+        }
+    }
+</div>
+
+@Html.PagedListPager(
+                    Model,
+                    page => Url.Action("IndexClassPart", "Home",
+                    new
+                    { page }),
+                     PagedListRenderOptions.EnableUnobtrusiveAjaxReplacing(
+                         new AjaxOptions() { HttpMethod = "GET", UpdateTargetId = "ContentId" })
+                    )
+
+
+@*@Scripts.Render("~/scripts/new_script.js")
+@Scripts.Render("~/scripts/jquery.unobtrusive-ajax.js")*@
+
+<script type="text/javascript">
+                        $(function () {
+
+                            $(".item__buy").click(function () {
+                                //alert("1");
+                                var recordToAdd = $(this).attr("data-id");
+                                //alert("recordToAdd =" + recordToAdd);
+                                if (recordToAdd != '') {
+
+                                    $.post("/ShoppingCart/AddToCart", { "id": recordToAdd },
+                                        function (data) {
+                                            $('.header__cart-count-2').text(data.CartCount);
+                                            $('a[data-id=' + recordToAdd + ']').toggleClass(".item__buy a_visited");
+
+                                        });
+
+                                };
+                            });
+
+                        });
+
+
+
+</script>
+
+
+
+
+

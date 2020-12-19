@@ -1,0 +1,88 @@
+﻿
+
+@model IEnumerable<iShop_ht.Models.Class>
+
+
+<ul class="catalog__ul">
+    @foreach (var node in Model.Where(n => n.Upcode == 0))
+    {
+
+        <li class="catalog__ul_li">
+            @if (node.Isgroup == true)
+            {
+                <div class="new__li flex">
+                    <p class="new__li_znak flex"></p>
+                    <a id="update-container" tree_id=@node.Id.ToString()>@node.Name</a>
+
+                </div>
+            }
+
+            else
+            {
+                <div class="new__li0 flex">
+                    <p class="new__li_noznak"></p>
+                    <a id="update-container" tree_id=@node.Id.ToString()>@node.Name</a>
+
+                </div>
+            }
+
+            @foreach (var node2 in Model.Where(n => n.Upcode == node.Id))
+                {
+                <ul class="catalog__ul1">
+                    @if (node2.Isgroup == true)
+                    {
+                        <div class="new__li flex">
+                            <p class="new__li_znak flex"></p>
+                            <a id="update-container" tree_id=@node2.Id.ToString()>@node2.Name</a>
+                            @foreach (var node3 in Model.Where(n => n.Upcode == node2.Id))
+                            {
+                                <ul class="catalog__ul1">
+                                    @if (node3.Isgroup == true)
+                                    {
+                                        <div class="new__li flex">
+                                            <p class="new__li_znak flex"></p>
+                                            @*<a id="update-container" tree_id=@node3.Id.ToString()>@node3.Name</a>*@
+                                            @*@Html.ActionLink(@node3.Name, "Index", "Home", new { ClassId = @node3.Id }, null)*@
+                                            @Ajax.ActionLink(@node3.Name, "Index", "Home", new { ClassId = @node3.Id }, new AjaxOptions { UpdateTargetId = "list_items" })
+
+                                        </div>
+                                    }
+                                    else
+                                    {
+                                        <div class="new__li0 flex">
+                                            <p class="new__li_noznak"></p>
+                                            @*<a id="update-container" tree_id=@node3.Id.ToString()>@node3.Name</a>*@
+                                            @*@Html.ActionLink(@node3.Name, "Index", "Home", new { ClassId = @node3.Id }, null)*@
+                                            @Ajax.ActionLink(@node3.Name, "Index", "Home", new { ClassId = @node3.Id }, new AjaxOptions { UpdateTargetId = "list_items" })
+                                        </div>
+                                    }
+
+                                </ul>
+
+                            }
+
+                        </div>
+                    }
+                    else
+                    {
+                        <div class="new__li0 flex">
+                            <p class="new__li_noznak"></p>
+                            @*<a id="update-container" tree_id=@node2.Id.ToString()>@node2.Name</a>*@
+                            @*@Html.ActionLink(@node2.Name, "Index", "Home", new { ClassId = @node2.Id },null)*@
+                            @Ajax.ActionLink(@node2.Name, "list_items", "Home", new { ClassId = @node2.Id }, new AjaxOptions { UpdateTargetId = "list_items" })
+                        </div>
+                    }
+
+                </ul>
+
+            }
+
+
+        </li>
+
+    }
+</ul>
+
+@section scripts{
+    @Scripts.Render("~/Scripts/jquery.unobtrusive-ajax.min.js")
+} 

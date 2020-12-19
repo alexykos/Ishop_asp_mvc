@@ -43,7 +43,7 @@
                                             <p class="new__li_znak flex"></p>
                                             @*<a id="update-container" tree_id=@node3.Id.ToString()>@node3.Name</a>*@
                                             @*@Html.ActionLink(@node3.Name, "Index", "Home", new { ClassId = @node3.Id }, null)*@
-                                            @Ajax.ActionLink(@node3.Name, "Index", "Home", new { ClassId = @node3.Id }, new AjaxOptions { UpdateTargetId = "bestbook" })
+                                            @Ajax.ActionLink(@node3.Name, "Index", "Home", new { ClassId = @node3.Id }, new AjaxOptions { UpdateTargetId = "list_items" })
 
                                         </div>
                                     }
@@ -53,7 +53,7 @@
                                             <p class="new__li_noznak"></p>
                                             @*<a id="update-container" tree_id=@node3.Id.ToString()>@node3.Name</a>*@
                                             @*@Html.ActionLink(@node3.Name, "Index", "Home", new { ClassId = @node3.Id }, null)*@
-                                            @Ajax.ActionLink(@node3.Name, "Index", "Home", new { ClassId = @node3.Id }, new AjaxOptions { UpdateTargetId = "bestbook" })
+                                            @Ajax.ActionLink(@node3.Name, "Index", "Home", new { ClassId = @node3.Id }, new AjaxOptions { UpdateTargetId = "list_items" })
                                         </div>
                                     }
 
@@ -69,7 +69,7 @@
                             <p class="new__li_noznak"></p>
                             @*<a id="update-container" tree_id=@node2.Id.ToString()>@node2.Name</a>*@
                             @*@Html.ActionLink(@node2.Name, "Index", "Home", new { ClassId = @node2.Id },null)*@
-                            @Ajax.ActionLink(@node2.Name, "bestbook", "Home", new { ClassId = @node2.Id }, new AjaxOptions { UpdateTargetId = "bestbook" })
+                            @Ajax.ActionLink(@node2.Name, "list_items", "Home", new { ClassId = @node2.Id }, new AjaxOptions { UpdateTargetId = "list_items" })
                         </div>
                     }
 

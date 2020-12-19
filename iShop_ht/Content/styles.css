@@ -16,7 +16,7 @@ body {
 a {
 	color: #000;
 	text-decoration: none;
-    cursor: pointer;
+    /*cursor: pointer;*/
 }
 a:hover {
 	color: #F15C15;
@@ -30,7 +30,7 @@ a:hover#link_basket {
 	text-decoration: none;
 }
 .container {
-	overflow-x: hidden;
+	/*overflow-x: hidden;*/
 	min-width: 320px;
 	height: 100%;
 }
@@ -56,6 +56,9 @@ a:hover#link_basket {
 .button:hover {
 	border-color: #F9A11F;
 	background-color: #FFB343;
+}
+.rubl {
+font-family: 'PT Sans', serif;
 }
 /* Header
 -----------------------------------------------------------------------------*/
@@ -207,7 +210,7 @@ a:hover#link_basket {
 }
 .content {
 	float: right;
-	width: calc(100% - 428px - 20px);
+	width: calc(100% - 428px - 80px);
 }
 .slider {
 	position: relative;
@@ -343,6 +346,7 @@ a:hover#link_basket {
 .item__image {
 	position: relative;
 	margin: 0 0 18px;
+    min-height: 160px;
 }
 .item__image img {
 	display: block;
@@ -737,8 +741,8 @@ textarea.contacts-form__field {
 	font-weight: bold;
 }
 .entry {
-    float:right;
-    width: calc(100% - 214px - 20px);
+    float:left;
+    /*width: calc(100% - 250px - 20px);*/
 }
 .entry2 {
     float:right;
@@ -818,7 +822,7 @@ textarea.contacts-form__field {
 	left: 0;
 	width: 12px;
 	height: 9px;
-	background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAJCAYAAAAGuM1UAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAMJJREFUeNpi/P//PwM+8DdJkhVIZQGxNhA3sxBQLAikSqCYDSTGApWQB1JGQLyNed7zn1AxNSDVDsRBUP1PgfgA459ECSUgoweIA6AmTQRicyhtAlX8AIhTgYbtAdlQCcSBUIkaINYAYgcgVoWK3YUq3g/iMAHxDqgJIABycyqS4ptAHA9TDNYA5KwF0glAfAfNz1egio8iC4JsYAAKHgRScUB8HSp+DohjgOIn0UOOETkegCHjDHVSN1DxWWxBDRBgAFtQOi352q44AAAAAElFTkSuQmCC');
+	/*background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAJCAYAAAAGuM1UAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAMJJREFUeNpi/P//PwM+8DdJkhVIZQGxNhA3sxBQLAikSqCYDSTGApWQB1JGQLyNed7zn1AxNSDVDsRBUP1PgfgA459ECSUgoweIA6AmTQRicyhtAlX8AIhTgYbtAdlQCcSBUIkaINYAYgcgVoWK3YUq3g/iMAHxDqgJIABycyqS4ptAHA9TDNYA5KwF0glAfAfNz1egio8iC4JsYAAKHgRScUB8HSp+DohjgOIn0UOOETkegCHjDHVSN1DxWWxBDRBgAFtQOi352q44AAAAAElFTkSuQmCC');*/
 }
 .entry ol {
 	counter-reset: li;
@@ -1164,7 +1168,7 @@ textarea.contacts-form__field {
 -----------------------------------------------------------------------------*/
 .sidebar {
 	float: left;
-	width: 214px;
+	width: 250px;
 }
 .catalog {
 	margin: 0 0 25px;

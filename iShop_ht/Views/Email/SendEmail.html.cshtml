@@ -1,0 +1,77 @@
+﻿@model IEnumerable<iShop_ht.Models.OrderDetail>
+@{
+    Layout = null;
+}
+
+<div class="container">
+    <div class="wrapper">
+
+        <div class="middle">
+
+
+            <h1 class="page-title">Номер заказ: @ViewData["orderiD"]</h1>
+
+            <form action="" method="post" class="checkout" style="max-width: 800px;
+	padding: 26px 40px 40px;
+	background: #EBEBEB;
+	font-size: 14px;
+	color: #6E6E6E;">
+
+                <div class="checkout__items" style="display: table;	border-top: 1px dashed #FFF;">
+                    @foreach (var item in Model)
+                    {
+                        <div class="checkout-item" style="display: table-row;">
+                            <div class="checkout-item__title" style="display: table-cell;padding: 35px 30px 0 0;color:black;">
+                                @item.I_commodity.Name
+                            </div>
+                            <div class="checkout-item__number" style="display: table-cell;width: 20%;white-space: nowrap;">
+                                Кол-во:
+                                <input type="text" value="@item.Quantity" class="checkout__input" style="height: 32px;padding: 0 12px;border: none;border-radius: 2px;width: 70px;margin: 0 0 0 8px;text-align: center;" />
+                            </div>
+                            <div class="checkout-item__price" style="display: table-cell;	width: 25%;	text-align: center;">
+                                Цена:
+                                <span class="number" style="font-weight: bold;color: #000;">
+                                    <span style="font-size: 16px;">
+                                        @item.Price.ToString("### ### ###")
+                                    </span>
+                                    руб.
+                                </span>
+                            </div>
+
+                        </div><!-- .checkout-item -->
+                    }
+                </div><!-- .checkout__items -->
+
+                <div class="checkout__bottom">
+                    <div class="checkout__total">
+                        Итого: <span class="number" style="font-size: 20px;font-weight: bold;color: #F15C15;">
+                            <span style="font-size: 24px;">@ViewData["orderTotal"]</span> руб.
+                        </span>
+                    </div>
+
+                </div><!-- .checkout__bottom -->
+            </form>
+
+        </div><!-- .middle -->
+
+        <footer class="footer">
+
+            <div class="footer__top">
+
+            </div><!-- .footer__top -->
+
+            <div class="footer__bottom">
+
+                <div class="footer__contacts">
+                    <p>ТК "Савеловский, павилионы: E-12, F-63</p>
+                    <p>Телефоны: <span class="footer__contacts-phones">(499)558-08-99, (495)789-5239</span></p>
+                    <p>Почта: info@ht-comp.ru</p>
+                    <p class="footer__contacts-time">Работаем с 10-00 до 21-00 без выходных<br /> и перерыва на обед</p>
+                </div><!-- .footer__contacts -->
+
+            </div><!-- .footer__bottom -->
+
+        </footer><!-- .footer -->
+
+    </div><!-- .wrapper -->
+</div><!-- .container -->

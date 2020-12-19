@@ -1,21 +1,13 @@
 ﻿
-@{
-    ViewBag.Title = "Commodity";
-    Layout = "~/Views/Shared/_Layout.cshtml";
-}
+<div class="product">
 
+    <div class="breadcrumbs">
+        <a href="\">Главная</a> <span class="arrow"></span>
+    </div><!-- .breadcrumbs -->
 
-<div class="entry">
-
-    <div class="product">
-
-        <div class="breadcrumbs">
-            <a href="\">Главная</a> <span class="arrow"></span>
-        </div><!-- .breadcrumbs -->
-
-        @{foreach (var line in Model)
+    @{foreach (var line in Model)
             {
-                <h1 class="page-title">@line.Name</h1>
+            <h1 class="page-title">@line.Name</h1>
                 <div class="product__inner">
                     <div class="product__photo">
                         <div class="product__photo-big">
@@ -30,7 +22,7 @@
                     </div><!-- .product__photo -->
                     <div class="product__main">
 
-                        <div class="product__price"><span>@line.Price.ToString("N2")</span> руб.</div>
+                        <div class="product__price"><span>@line.Price.ToString("### ### ###")</span> <span class="rubl">&#8399;</span></div>
 
                         <div class="product__buy  button" data-id="@line.Code">В корзину</div>
 
@@ -61,10 +53,8 @@
 
                     </div><!-- .product__main -->
                 </div><!-- .product__inner -->
-            }
         }
+    }
 
 
-    </div><!-- .product -->
-
-</div><!-- .entry -->
+</div><!-- .product -->

@@ -1,5 +1,5 @@
 ﻿
-@model IEnumerable<iShop_source.Models.I_class>
+@model IEnumerable<iShop_ht.Models.I_class>
 
 
 <div class="breadcrumbs">
@@ -7,14 +7,16 @@
     {
 
         <span class="sep"></span>
-        @Html.ActionLink("Главная", "IndexClass", "Home", new { Id = 0 }, null)
+        @Ajax.ActionLink("Главная", "list_items", "Home", new { ClassId = 0 }, new AjaxOptions { UpdateTargetId = "list_items" })
+        @*@Html.ActionLink("Главная", "IndexClass", "Home", new { Id = 0 }, null)*@
         @*<a href="#">@node.Name</a>*@
         <span class="arrow"></span>
         foreach (var node in Model)
         {
             <span class="sep"></span>
-            @Html.ActionLink(@node.Name, "IndexClass", "Home", new { Id = @node.Code }, null)
-            @*<a href="#">@node.Name</a>*@
+            @Ajax.ActionLink(@node.Name, "list_items", "Home", new { ClassId = @node.Code }, new AjaxOptions { UpdateTargetId = "list_items" })
+            @*@Html.ActionLink(@node.Name, "IndexClass", "Home", new { Id = @node.Code }, null)*@
+            @*< a href = "#" > @node.Name </ a > *@
             <span class="arrow"></span>
         }
     }

@@ -53,7 +53,7 @@
                                         <div class="new__li0 flex">
                                             <p class="new__li_noznak"></p>
                                             @*<a id="update-container" tree_id=@node3.Code.ToString()>@node3.Name</a>*@
-                                            @Ajax.ActionLink(@node3.Name, "IndexClassPart", "Home", new { Id = @node3.Code }, new AjaxOptions { UpdateTargetId = "bestbook" })
+                                            @Ajax.ActionLink(@node3.Name, "IndexClassPart", "Home", new { Id = @node3.Code }, new AjaxOptions { UpdateTargetId = "ContentId" })
 
                                         </div>
                                     }
@@ -69,7 +69,7 @@
                         <div class="new__li0 flex">
                             <p class="new__li_noznak"></p>
                             @*<a id="update-container" tree_id=@node2.Code.ToString()>@node2.Name</a>*@
-                            @Ajax.ActionLink(@node2.Name, "IndexClassPart", "Home", new { ClassId = @node2.Code }, new AjaxOptions { UpdateTargetId = "bestbook" })
+                            @Ajax.ActionLink(@node2.Name, "IndexClassPart", "Home", new { ClassId = @node2.Code }, new AjaxOptions { UpdateTargetId = "ContentId" })
                         </div>
                     }
 

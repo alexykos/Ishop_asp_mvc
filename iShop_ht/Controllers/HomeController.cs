@@ -2,7 +2,6 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using iShop_ht.Models;
 using iShop_ht.ViewModels;
 using System.Web;
 using System.Web.Mvc;
@@ -16,20 +15,53 @@ namespace iShop_ht.Controllers
 
         BookContext db = new BookContext();
         Ishop_Entities StoreDB = new Ishop_Entities();
-        public ActionResult Index(int? ClassId)
+        public ActionResult Index(int? ClassId, int? page)
         {
 
-            return View();
+            page = 1;
+            
+
+            if (ClassId != null) { TempData["currentClass"] = ClassId; }
+
+
+            int currentClass = 0;
+            
+            if (TempData["currentClass"] != null)
+            {
+                currentClass = int.Parse(TempData["currentClass"].ToString());
+                TempData.Keep();
+            }
+
+            //if (TempData["currentClass"] != null)
+            //{
+            //    currentClass = int.Parse(TempData["currentClass"].ToString());
+            //    TempData.Keep();
+            //}
+
+
+            int pageSize = 10;
+            int pageNumber = page ?? 1;
+
+
+
+            System.Data.SqlClient.SqlParameter param_class = new System.Data.SqlClient.SqlParameter("Class", currentClass);
+            System.Data.SqlClient.SqlParameter param_isTop = new System.Data.SqlClient.SqlParameter("isTop", 1);
+            var I_commodities = StoreDB.Database.SqlQuery<I_commodity>("GetI_commodities_class @Class, @isTop ", param_class, param_isTop).ToList();
+
+            //return View(I_commodities.OrderBy(s => s.Price).ToPagedList(pageNumber, pageSize));
+
+            //return PartialView(I_commodities);
+            return PartialView(I_commodities.ToPagedList(pageNumber, pageSize));
         }
 
         public ActionResult BestBook(int? ClassId)
 
         {
 
-            if (Request.IsAjaxRequest())
-            {
-                int a = 1;
-            }
+            //if (Request.IsAjaxRequest())
+            //{
+            //    int a = 1;
+            //}
             // получаем из бд все объекты Book
             IEnumerable<Book> books = db.Books;
             // передаем все объекты в динамическое свойство Books в ViewBag
@@ -38,19 +70,7 @@ namespace iShop_ht.Controllers
             return PartialView();
         }
 
-        public ActionResult About()
-        {
-            ViewBag.Message = "Your application description page.";
 
-            return View();
-        }
-
-        public ActionResult Contact()
-        {
-            ViewBag.Message = "Your contact page.";
-
-            return View();
-        }
 
         [ChildActionOnly]
         public ActionResult _TreeList2()
@@ -69,23 +89,35 @@ namespace iShop_ht.Controllers
         [ChildActionOnly]
         public ActionResult _TreeList()
         {
-            var clss = from cls in StoreDB.I_classes
-                           //join cmm in StoreDB.I_commodities on cls.Code equals cmm.I_class_code
-                       where StoreDB.I_commodities.Any(p => p.I_class_code == cls.Code || cls.Isgroup == true)
-                       select cls;
+            //var clss = from cls in StoreDB.I_classes
+            //               //join cmm in StoreDB.I_commodities on cls.Code equals cmm.I_class_code
+            //           where StoreDB.I_commodities.Any(p => p.I_class_code == cls.Code || cls.Isgroup == true)
+            //           select cls;
+            var clss = StoreDB.Database.SqlQuery<I_class>("i_getClassForTree").ToList();
 
             return PartialView(clss);
 
         }
 
-        public ActionResult IndexClassPart(int? ClassId, int? page)
+        public ActionResult IndexClassPart(int? ClassId, int? page, string SortOrder = "")
         {
 
-            if (Request.IsAjaxRequest())
-            {
-                int a = 1;
-            }
+
+
+
+
+            //if (Request.IsAjaxRequest())
+            //{
+            //    int a = 1;
+            //}
+            string currentSortOrder = "Price";
+
             if (ClassId != null) { TempData["currentClass"] = ClassId; }
+            if (SortOrder != "")
+            { TempData["currentSortOrder"] = SortOrder;
+                // если вызывается процедура с параметром сортировки, то сбрасываем страницы
+                page = 1;
+            }
 
 
             int currentClass = 0;
@@ -95,14 +127,16 @@ namespace iShop_ht.Controllers
                 TempData.Keep();
             }
 
-            if (TempData["currentClass"] != null)
+            if (TempData["currentSortOrder"] != null)
             {
-                currentClass = int.Parse(TempData["currentClass"].ToString());
+                
+                currentSortOrder = TempData["currentSortOrder"].ToString();
+                if (currentSortOrder == "Price" && SortOrder == "Price") { currentSortOrder = "PriceDesc"; }
                 TempData.Keep();
             }
 
 
-            int pageSize = 3;
+            int pageSize = 10;
             int pageNumber = page??1;
 
 
@@ -111,11 +145,45 @@ namespace iShop_ht.Controllers
 
             var I_commodities = StoreDB.Database.SqlQuery<I_commodity>("GetI_commodities_class @Class ", param_class).ToList();
 
-            //return View(I_commodities.OrderBy(s => s.Price).ToPagedList(pageNumber, pageSize));
 
-            //return PartialView(I_commodities);
-            return PartialView(I_commodities.OrderBy(s => s.Price).ToPagedList(pageNumber, pageSize));
+           
 
+            switch (currentSortOrder)
+            {
+                case "Price":
+                    return PartialView(I_commodities.OrderBy(s => s.Price).ToPagedList(pageNumber, pageSize));
+                    break;
+                case "PriceDesc":
+                    return PartialView(I_commodities.OrderByDescending(s => s.Price).ToPagedList(pageNumber, pageSize));
+                    break;
+                default:
+                    return PartialView(I_commodities.OrderBy(s => s.Price).ToPagedList(pageNumber, pageSize));
+                    break;
+            }
+           
+
+            //return PartialView(resultOrder.ToPagedList(pageNumber, pageSize));
+
+        }
+
+        public ActionResult About(int? Id)
+        {
+            //if (Request.IsAjaxRequest())
+            //{
+            //    int a = 1;
+            //}
+            return PartialView();
+
+        }
+
+
+        public ActionResult MainPanel()
+        {
+            //if (Request.IsAjaxRequest())
+            //{
+            //    int a = 1;
+            //}
+            return PartialView();
         }
 
         [HttpGet]
@@ -129,29 +197,23 @@ namespace iShop_ht.Controllers
 
 
 
-            return View(commodity2);
+            return PartialView(commodity2);
 
         }
-        [HttpGet]
+       
         public ActionResult Contacts(int id = 0)
         {
-           
-            return View();
+
+            return PartialView();
 
         }
 
-        [HttpGet]
-        public ActionResult About(int id = 0)
-        {
 
-            return View();
-
-        }
         [HttpGet]
         public ActionResult Delivery(int id = 0)
         {
 
-            return View();
+            return PartialView();
 
         }
 

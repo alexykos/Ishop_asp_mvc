@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<title></title>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+	<link href="styles.css" rel="stylesheet" />
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script src="js/slick.min.js"></script>
+	<script src="js/scripts.js"></script>
+	<script src="js/new_script.js"></script>
+</head>
+
+<body>
+
+<div class="container">
+<div class="wrapper">
+
+
+	<div class="middle middle__catalog">
+
+		<aside class="sidebar">
+
+			<div class="catalog  catalog--hidden">
+				<div class="catalog__title"><span>Каталог</span></div>
+				<ul class="catalog__ul">
+					
+				</ul>
+			</div><!-- .catalog -->
+
+
+			<div class="sidebar-contacts">
+				<div class="sidebar-contacts__title">Контакты</div>
+				<div class="sidebar-contacts__inner">
+					<div class="sidebar-contacts__address">ТК "Савеловский"<br /> Павилионы: E-12, F-63</div>
+					<div class="sidebar-contacts__item">Телефоны: <div class="sidebar-contacts__phone"><p>(499)558-08-99<p><p> (495)789-5239</p></div></div>
+					<div class="sidebar-contacts__item">Почта: <div class="sidebar-contacts__email">info@ht-comp.ru</div></div>
+					<div class="sidebar-contacts__item">работаем с 10-00 до 21-00<br /> без выходных и перерыва на обед</div>
+					<div class="sidebar-contacts__map"><img src="i/map.jpg" alt=""></div>
+				</div><!-- .sidebar-contacts__inner -->
+			</div><!-- .sidebar-contacts -->
+		</aside><!-- .sidebar -->
+
+		<main class="content">
+
+			<div class="breadcrumbs">
+				<a href="#">Главная</a> <span class="arrow"></span>
+			</div><!-- .breadcrumbs -->
+
+			<div class="sort">
+				<div class="sort__title">Сортировать по:</div>
+				<ul>
+					<li><a href="#">популярности</a></li>
+					<li><a href="#">цене</a></li>
+					<li><a href="#">новинкам</a></li>
+				</ul>
+				<div class="sort__button flex">
+					<p class="sort__button_left sort__button_active"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMyIgaGVpZ2h0PSIxMyIgdmlld0JveD0iMCAwIDEzIDEzIiBmaWxsPSIjMmIyYjJiIj48cGF0aCBkPSJNMCAxMGgzdjNoLTN6TTUgMTBoOHYzaC04ek0wIDVoM3YzaC0zek01IDVoOHYzaC04ek0wIDBoM3YzaC0zek01IDBoOHYzaC04eiIvPjwvc3ZnPgo=" alt=""></p>
+					<p class="sort__button_right"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMyIgaGVpZ2h0PSIxMyIgdmlld0JveD0iMCAwIDEzIDEzIiBmaWxsPSIjMmIyYjJiIj48cGF0aCBkPSJNMCAwaDZ2NmgtNnpNNyAwaDZ2NmgtNnpNNyA3aDZ2NmgtNnpNMCA3aDZ2NmgtNnoiLz48L3N2Zz4K" alt=""></p>
+				</div>
+			</div><!-- .sort -->
+
+			<h1 class="page-title">Жесткие диски</h1>
+
+			<div class="items">
+
+				<div class="item">
+					<div class="item__id">123456</div>
+					<div class="item__title"><a href="#">Жесткий диск HDD 3.0Tb Seagate, SATA-III, 64 Mb, ST3000DM008 Barracuda</a></div>
+					<div class="item__image"><img src="https://imgholder.ru/188x188" width="188" height="188" alt="" /></div>
+					<div class="item__bottom">
+						<div class="item__price"><span>5 420</span> руб.</div>
+						<div class="item__buy"></div>
+					</div><!-- .item__bottom -->
+				</div><!-- .item -->
+
+				<div class="item">
+					<div class="item__id">123456</div>
+					<div class="item__title"><a href="#">Колонки Edifier S730 (2x75W + Subwoofer 150 W дерево, ПДУ проводной+...</a></div>
+					<div class="item__image"><img src="https://imgholder.ru/188x188" width="188" height="188" alt="" /></div>
+					<div class="item__bottom">
+						<div class="item__price"><span>19 326</span> руб.</div>
+						<div class="item__buy_not"></div>
+					</div><!-- .item__bottom -->
+				</div><!-- .item -->
+
+
+			</div><!-- .items -->
+
+			<div class="pagination">
+				<a href="#" class="prev">‹</a>
+				<span class="current">1</span>
+				<a href="#">2</a>
+				<a href="#">3</a>
+				<a href="#">4</a>
+				<a href="#" class="next">›</a>
+			</div><!-- .pagination -->
+
+			<div class="about">
+				<div class="headline">О компании</div>
+				<div class="entry">
+					<p>Компания занимается оптово-розничной торговлей в сфере компьютерной техники.</p>
+
+					<p>Каталог компании составляет более 5000 наименований номенклатуры.</p>
+
+					<p>Гипер Трейд имеет несколько павильонов на Савеловском рынке. В конце 2010 года был запущен интернет магазин. Мы популярны не только среди частных покупателей, но и среди организаций. Наши менеджеры всегда готовы дать исчерпывающие ответы на интересующие вас вопросы по комплектующим, компьютерам в целом и их настройкам. На сегодняшний день ассортимент постоянно пополняется новыми товарами различных производителей. В нашем интернет магазине вы найдете огромный ассортимент комплектующих, по достойным ценам.</p>
+
+					<p>Компания занимается оптово-розничной торговлей в сфере компьютерной техники. Каталог компании составляет более 5000 наименований номенклатуры.Гипер Трейд имеет несколько павильонов на Савеловском рынке. В конце 2010 года был запущен интернет магазин. Мы популярны не только среди частных покупателей, но и среди организаций. Наши менеджеры всегда готовы дать исчерпывающие ответы на интересующие вас вопросы по комплектующим, компьютерам в целом и их настройкам. На сегодняшний день ассортимент постоянно пополняется новыми товарами различных производителей. В нашем интернет магазине вы найдете огромный ассортимент комплектующих, по достойным ценам.</p>
+				</div><!-- .entry -->
+			</div><!-- .about -->
+
+		</main><!-- .content -->
+
+		<aside class="filter__block">
+		<div class="filter">
+				<div class="filter__title"><span>Фильтры</span></div>
+				<div class="filter__inner">
+
+					<div class="filter__section  filter__price">
+						<div class="filter__section-title">Цена</div>
+						<div class="filter__label">от</div>
+						<input type="text" value="" class="filter__input" />
+						<div class="filter__label">до</div>
+						<input type="text" value="" class="filter__input" />
+					</div><!-- .filter__section -->
+
+					<div class="filter__section">
+						<div class="filter__section-title">Производитель</div>
+						<ul class="filter__section-list">
+							<li><a href="#">AMD (48)</a></li>
+							<li><a href="#">In-Win (1)</a></li>
+							<li><a href="#">Intel (133)</a></li>
+						</ul>
+					</div><!-- .filter__section -->
+
+					<div class="filter__section">
+						<div class="filter__section-title">Серия процессора</div>
+						<ul class="filter__section-list">
+						
+						</ul>
+					</div><!-- .filter__section -->
+
+					<div class="filter__section">
+						<div class="filter__section-title">Количество ядер</div>
+						<ul class="filter__section-list">
+							
+						</ul>
+					</div><!-- .filter__section -->
+
+					<div class="filter__section">
+						<div class="filter__section-title">Сокет</div>
+						<ul class="filter__section-list">
+							
+						</ul>
+					</div><!-- .filter__section -->
+
+					<div class="filter__section">
+						<div class="filter__section-title">Технологический процесс</div>
+						<ul class="filter__section-list">
+						
+						</ul>
+					</div><!-- .filter__section -->
+
+					<div class="filter__section">
+						<div class="filter__section-title">Особенности</div>
+						<ul class="filter__section-list">
+							
+						</ul>
+					</div><!-- .filter__section -->
+
+					<button class="button">Применить фильтры</button>
+
+				</div><!-- .filter__inner -->
+		</div>
+		</aside>
+		<!-- .filter -->
+
+		
+	</div><!-- .middle -->
+
+	<footer class="footer">
+
+		<div class="footer__top">
+
+			<nav class="footer__nav">
+				<ul>
+					<li><a href="#">Гарантия</a></li>
+					<li><a href="#">Доставка</a></li>
+					<li><a href="#">Контакты</a></li>
+					<li><a href="#">О компании</a></li>
+					<li><a href="#">Оптовикам</a></li>
+				</ul>
+			</nav>
+
+			<ul class="footer__soc">
+				<li><a href="#" class="vk">ВКонтакте</a></li>
+				<li><a href="#" class="ok">Одноклассники</a></li>
+				<li><a href="#" class="fb">Facebook</a></li>
+				<li><a href="#" class="tw">Twitter</a></li>
+				<li><a href="#" class="gp">Google Plus</a></li>
+				<li><a href="#" class="yt">YouTube</a></li>
+			</ul>
+
+		</div><!-- .footer__top -->
+
+		<div class="footer__bottom">
+
+			<div class="footer__copyright">Гипер Трейд<br /> Все права защищены, 2017 г.</div>
+
+			<div class="footer__contacts">
+				<p>ТК "Савеловский, павилионы: E-12, F-63</p>
+				<p>Телефоны: <span class="footer__contacts-phones">(499)558-08-99, (495)789-5239</span></p>
+				<p>Почта: info@ht-comp.ru</p>
+				<p class="footer__contacts-time">Работаем с 10-00 до 21-00 без выходных<br /> и перерыва на обед</p>
+			</div><!-- .footer__contacts -->
+
+		</div><!-- .footer__bottom -->
+
+	</footer><!-- .footer -->
+
+</div><!-- .wrapper -->
+</div><!-- .container -->
+
+</body>
+</html>
