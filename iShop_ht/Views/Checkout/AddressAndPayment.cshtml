@@ -56,23 +56,23 @@
                                 <input class="registration__input" name="kpp" type="text">
                             </li>
                             <li>
-                                <p class="registration__name2">Юридический адрес</p>
+                                <p class="registration__name2">Юридический адрес<span>*</span></p>
                                 <input class="registration__input" name="juraddr" type="text">
                             </li>
                             <li>
-                                <p class="registration__name2">Название банка</p>
+                                <p class="registration__name2">Название банка<span>*</span></p>
                                 <input class="registration__input" name="namebank" type="text">
                             </li>
                             <li>
-                                <p class="registration__name2">БИК</p>
+                                <p class="registration__name2">БИК<span>*</span></p>
                                 <input class="registration__input" name="bik" type="text">
                             </li>
                             <li>
-                                <p class="registration__name2">р/с</p>
+                                <p class="registration__name2">р/с<span>*</span></p>
                                 <input class="registration__input" name="rs" type="text">
                             </li>
                             <li>
-                                <p class="registration__name2">к/с</p>
+                                <p class="registration__name2">к/с<span>*</span></p>
                                 <input class="registration__input" name="ks" type="text">
                             </li>
                         </ul>
@@ -80,9 +80,21 @@
                 </li>
                 <li>
                     <p class="registration__name">Доставка</p>
+                
+                        <div class="registration__delivery flex">
+                        <label class="registration__delivery_label registration__delivery_label1 flex">
+                            <input type="radio" name="delivery" id="deliveryMySelfAaP" checked>
+                            <span>Самовывоз</span>
+                        </label>
+                        <label class="registration__delivery_label registration__delivery_label1 flex">
+                            <input type="radio" name="delivery" id="deliveryAaP">
+                            <span>Доставка</span>
+                        </label>
+                    </div>
+                
                     <div class="delivery flex">
-                        <select name="dostavka" class="dostavka__select">
-                            <option value="">Самовывоз ВКЦ "Савеловский", пав. F63, E12 (бесплатно)</option>
+                        <select name="dostavka" class="dostavka__select" disabled>
+                            <option selected = "selected" value="">Самовывоз ВКЦ "Савеловский", пав. F63 (бесплатно)</option>
                             <option value="">Курьерская служба EMS (стоимость рассчитывается по тарифам компании), при 100% предоплате</option>
                             <option value="">Доставка до Московского терминала ТК "СДЭК" (вес до 20 кг) 200 руб, при 100% предоплате</option>
                             <option value="">Доставка по Москве за пределы МКАД (вес до 20 кг) 400 руб. + 40 руб/км, оплата при получении </option>
@@ -104,7 +116,7 @@
                         @*<textarea name="address" placeholder="" class="message__block" required></textarea>*@
                     </div>
                 </li>
-                <li class="sposob">
+                @*<li class="sposob">
                     <p class="registration__name">Способ оплаты</p>
                     <div class="registration__klient flex">
                         <label class="registration__klient_label flex">
@@ -120,7 +132,7 @@
                             <span><img src="i/cards.png" alt=""> (онлайн)</span>
                         </label>
                     </div>
-                </li>
+                </li>*@
                 <li class="kontact__info">
                     <p class="registration__name">Контактная информация</p>
                     <ul>
@@ -158,7 +170,8 @@
         <input type="submit" value="Оформить заказ" class="button" />
     }
 </div>
-<script src="js/wow.min.js"></script>
+@*<script src="js/wow.min.js"></script>
 <script>
 	new WOW().init();
 </script>
+<script src="js/AddressAndPayment.js"></script>*@

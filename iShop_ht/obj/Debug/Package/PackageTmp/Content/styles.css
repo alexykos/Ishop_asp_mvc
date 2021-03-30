@@ -1,7 +1,4 @@
-/* ---------------------------------
-Markup: Dimox
-Author URI: http://dimox.name/
---------------------------------- */
+
 /* reset */html{box-sizing:border-box}*,:after,:before{box-sizing:inherit}a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,caption,center,cite,code,dd,del,details,dfn,div,dl,dt,embed,fieldset,figcaption,figure,footer,form,h1,h2,h3,h4,h5,h6,header,hgroup,html,iframe,img,ins,kbd,label,legend,li,mark,menu,nav,object,ol,output,p,pre,q,ruby,s,samp,section,small,span,strike,strong,sub,summary,sup,table,tbody,td,tfoot,th,thead,time,tr,tt,u,ul,var,video{margin:0;padding:0;border:0;font:inherit;vertical-align:baseline}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}table{border-collapse:collapse;border-spacing:0}:focus{outline:0}/* end reset */
 /* normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0}article,aside,details,figcaption,figure,footer,header,hgroup,main,menu,nav,section,summary{display:block}audio,canvas,progress,video{display:inline-block;vertical-align:baseline}audio:not([controls]){display:none;height:0}[hidden],template{display:none}a{background-color:transparent}a:active,a:hover{outline:0}abbr[title]{border-bottom:1px dotted}b,strong{font-weight:700}dfn{font-style:italic}mark{background:#ff0;color:#000}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sup{top:-.5em}sub{bottom:-.25em}img{border:0;vertical-align:bottom}svg:not(:root){overflow:hidden}figure{margin:1em 40px}hr{box-sizing:content-box;height:0}pre{overflow:auto}code,kbd,pre,samp{font-family:monospace,monospace;font-size:1em}button,input,optgroup,select,textarea{color:inherit;font:inherit;margin:0}button{overflow:visible}button,select{text-transform:none}button,html input[type=button],input[type=reset],input[type=submit]{-webkit-appearance:button;cursor:pointer}button[disabled],html input[disabled]{cursor:default}button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0}input{line-height:normal}input[type=checkbox],input[type=radio]{box-sizing:border-box;padding:0}input[type=number]::-webkit-inner-spin-button,input[type=number]::-webkit-outer-spin-button{height:auto}input[type=search]{-webkit-appearance:textfield}input[type=search]::-webkit-search-cancel-button,input[type=search]::-webkit-search-decoration{-webkit-appearance:none}fieldset{border:1px solid silver;margin:0 2px;padding:.35em .625em .75em}legend{border:0;padding:0}textarea{overflow:auto}optgroup{font-weight:700}table{border-collapse:collapse;border-spacing:0}td,th{padding:0}/* end normalize */
 html,
@@ -56,6 +53,12 @@ a:hover#link_basket {
 .button:hover {
 	border-color: #F9A11F;
 	background-color: #FFB343;
+}
+
+.button_order
+{
+    display: inline-block;
+    margin-top:10px;
 }
 .rubl {
 font-family: 'PT Sans', serif;
@@ -333,6 +336,9 @@ font-family: 'PT Sans', serif;
 	padding: 14px 15px 20px;
 	border: 1px solid #EBEBEB;
 	border-radius: 2px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 .item__title {
 	margin: 0 0 15px;
@@ -343,9 +349,17 @@ font-family: 'PT Sans', serif;
 .item__title a:hover {
 	text-decoration: underline;
 }
+.item__sign_id{
+    font-size: 12px;
+    text-align: center;
+}
 .item__image {
 	position: relative;
 	margin: 0 0 18px;
+    /*min-height: 180px;*/
+    max-width:100%;
+    height:auto;
+
 }
 .item__image img {
 	display: block;
@@ -377,15 +391,20 @@ font-family: 'PT Sans', serif;
 	border-top: 1px solid #EBEBEB;
 }
 .item__price {
-	padding: 8px 13px;
+    width: 80%;
+	padding: 8px 0px;
 	border-radius: 2px;
 	background: #EBEBEB;
 	font-size: 18px;
 	font-weight: bold;
 	color: #6E6E6E;
+    text-align: center;
+    vertical-align: middle;
+   
 }
 .item__price span {
 	font-size: 20px;
+    margin-left:5px;
 }
 .item__price .old {
 	font-size: 14px;
@@ -398,7 +417,7 @@ font-family: 'PT Sans', serif;
 	color: #F15C15;
 }
 .item__buy {
-	width: 40px;
+	width: 30%;
 	height: 40px;
 	border-bottom: 2px solid #E54D05;
 	border-radius: 2px;
@@ -406,6 +425,7 @@ font-family: 'PT Sans', serif;
 	box-shadow: 0 2px 2px rgba(0,0,0,.1);
 	transition: .1s;
 	cursor: pointer;
+    margin-left:2px;
 }
 .item__buy:hover {
 	border-color: #F9A11F;
@@ -855,7 +875,7 @@ textarea.contacts-form__field {
 }
 .entry blockquote.alignright,
 .entry blockquote.alignleft {
-	width: 400px;
+	/*width: 400px;*/
 	margin-top: 20px;
 }
 .entry blockquote p {
@@ -903,7 +923,7 @@ textarea.contacts-form__field {
 .checkout__title {
 	margin: 0 0 24px;
 	padding: 0 0 11px;
-	border-bottom: 1px solid #FFF;
+	border-bottom: 2px solid #FFF;
 	font-size: 16px;
 	font-weight: bold;
 	color: #000;
@@ -945,7 +965,7 @@ textarea.contacts-form__field {
 }
 .checkout__items {
 	display: table;
-	border-top: 1px dashed #FFF;
+	/*border-top: 1px dashed #FFF;*/
 }
 .checkout-item {
 	display: table-row;
@@ -1001,7 +1021,13 @@ textarea.contacts-form__field {
 	align-items: center;
 	margin: 35px 0 0;
 	padding: 20px 0 0;
-	border-top: 1px dashed #FFF;
+	border-top: 2px solid #FFF;
+}
+
+.checkout__total {
+	font-size: 24px;
+	font-weight: bold;
+	
 }
 .checkout__total .number {
 	font-size: 20px;
@@ -1237,7 +1263,7 @@ textarea.contacts-form__field {
     background: url(i/line.gif) no-repeat 1px -1765px;
 }
 .catalog__ul a{
-	font-size:11px;
+	font-size:13px;
 }
 .catalog__ul1 ul{
 	
@@ -1643,6 +1669,13 @@ input:active, textarea:active,button:active {outline:none;}
 .registration__klient_label span{
 	margin-left:5px;
 }
+.registration__delivery_label{
+	margin-right:14px;
+	align-items:center;
+}
+.registration__delivery_label span{
+	margin-left:5px;
+}
 .dataDelivery__choice select,.message__block,.registration__input{
 	border: 1px solid #d2d2d2;
     border-radius: 5px;
@@ -1666,6 +1699,9 @@ input:active, textarea:active,button:active {outline:none;}
 .delivery{
 	justify-content:space-between;
 	flex-wrap:wrap;
+}
+.divtextareaNon{
+    display:none;
 }
 
 .address__block >.registration__name2,.address__block li:first-child .registration__name2{
@@ -1752,7 +1788,7 @@ input:active, textarea:active,button:active {outline:none;}
 }
 .dostavka__select{
 	width:100%;
-	background: #FFF url(https://i.ibb.co/xz8F4pY/Arrow-Triangle.png) no-repeat right 16px top 50%;
+	/*background: #FFF url(https://i.ibb.co/xz8F4pY/Arrow-Triangle.png) no-repeat right 16px top 50%;*/
 	padding: 8px 30px 8px 10px;
 	border: 1px solid #d2d2d2;
     border-radius: 5px;
@@ -1784,6 +1820,7 @@ input:active, textarea:active,button:active {outline:none;}
 	-moz-display:flex;
 	display:flex;
 	flex-wrap: wrap;
+    
 }
 .items__active .item{
 	width:100%;
@@ -1791,8 +1828,9 @@ input:active, textarea:active,button:active {outline:none;}
 	-moz-display:flex;
 	display:flex;
 	align-items: center;
-	padding:5px 14px;
+	padding:5px 5px;
 	margin: 0 13px 2px;
+    flex-direction: row;
 }
 .items__active .item__title {
     margin: 0;
@@ -1809,6 +1847,7 @@ input:active, textarea:active,button:active {outline:none;}
 	margin: 0;
 	padding:0;
 	height: 100%;
+    width: 22%;
     align-items: center;
 	border:none;
 }
@@ -1818,6 +1857,7 @@ input:active, textarea:active,button:active {outline:none;}
 	-webkit-display:flex;
 	-moz-display:flex;
 	display:flex;
+    justify-content:center;
     align-content: center;
 	width: 110px;
 }
@@ -2151,6 +2191,12 @@ input:active, textarea:active,button:active {outline:none;}
 		flex-direction:column;
 	}
 	.registration__klient_label {
+		margin:0 0 10px 0;
+	}
+    .registration__delivery{
+		flex-direction:column;
+	}
+	.registration__delivery_label {
 		margin:0 0 10px 0;
 	}
 	.address__block ul li {

@@ -5,8 +5,8 @@
     Layout = "/Views/Shared/_Layout_notTree.cshtml";
     ViewBag.Title = "Shopping Cart";
 }
-<script src="/Scripts/jquery-1.10.2.min.js"
-        type="text/javascript"></script>
+@*<script src="/Scripts/jquery-1.10.2.min.js"
+        type="text/javascript"></script>*@
 <script type="text/javascript">
     $(function () {
         // Document.ready -> link up remove event handler
@@ -43,6 +43,7 @@
 
                 $.post("/ShoppingCart/AddToCart", { "id": recordToAdd },
                     function (data) {
+                        //alert("recordToAdd =" + data.Message);
                         $('#item-count-' + data.DeleteId).attr("value", data.ItemCount );
                         $('.checkout__total .number span').text(data.CartTotal);
                         $('#update-message').text(data.Message);
@@ -70,8 +71,7 @@
                         } else {
                             $('#item-count-' + data.DeleteId).attr("value", data.ItemCount );
                         }
-                        //alert("#item-count-" + data.DeleteId);
-                        //alert(data.ItemCount);
+                        
                         $('.checkout__total .number span').text(data.CartTotal);
                         $('#update-message').text(data.Message);
                         $('#cart-status').text('Cart (' + data.CartCount + ')');
@@ -127,11 +127,11 @@
     </div> <!--checkout__items-->
 
     <div class="checkout__bottom">
-        <div class="checkout__total">Итого: <span class="number"><span> @Model.CartTotal</span> <span class="rubl">&#8399;</span></span></div>
+        <div class="checkout__total">Итого: <span class="number"><span> @Model.CartTotal.ToString("### ### ###")</span></span> <span class="rubl">&#8399;</span></div>
         <!--<input type="submit" value="Оформить заказ" class="button" />-->
         <a href="/Checkout/AddressAndPayment">
             <p class="button">
-                Оформить заказ
+                <span class="button_order">Оформить заказ</span>
                 @*@Html.ActionLink("Checkout>> ", "AddressAndPayment", "Checkout")*@
                 @*@Html.ActionLink("Оформить заказ", "AddressAndPayment", "Checkout")*@
             </p>

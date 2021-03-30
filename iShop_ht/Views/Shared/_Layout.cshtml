@@ -15,10 +15,11 @@
     @Scripts.Render("~/scripts/jquery.unobtrusive-ajax.js")
     @Scripts.Render("~/scripts/jquery.inputmask.js")
 
-    <link href=@Url.Content("~/Content/styles.css") rel="stylesheet" />
+    
     <link href=@Url.Content("~/Content/PagedList.css") rel="stylesheet" />
     <link href=@Url.Content("~/scripts/callmewidget/style.min.css") rel="stylesheet" />
-
+    <link href=@Url.Content("~/Content/styles.css") rel="stylesheet" />
+    <link href=@Url.Content("~/Content/MyStyle.css") rel="stylesheet" />
 
 
     @Scripts.Render("~/scripts/slick.min.js")
@@ -44,11 +45,15 @@
                 <div class="header__nav-toggle"></div>
                 <nav class="header__nav">
                     <ul>
-                        <li><a href="#">Гарантия</a></li>
-                        <li>@Ajax.ActionLink("Доставка", "Delivery", "Home", new { }, new AjaxOptions { UpdateTargetId = "ContentId" })</li>
-                        <li>@Ajax.ActionLink("Контакты", "Contacts", "Home", new { }, new AjaxOptions { UpdateTargetId = "ContentId" })</li>
-                        <li>@Ajax.ActionLink("О компании", "About", "Home", new { }, new AjaxOptions { UpdateTargetId = "ContentId" })</li>
-                        <li><a class="test_clk" href="#">Оптовикам</a></li>
+                        
+                        <li>@Ajax.ActionLink("О КОМПАНИИ", "About", "Home", new { }, new AjaxOptions { UpdateTargetId = "ContentId" })</li>
+                        <li>@Ajax.ActionLink("ОПЛАТА ", "Pay", "Home", new { }, new AjaxOptions { UpdateTargetId = "ContentId" })</li>
+                        <li>@Ajax.ActionLink("ДОСТАВКА", "Delivery", "Home", new { }, new AjaxOptions { UpdateTargetId = "ContentId" })</li>
+                        <li>@Ajax.ActionLink("САМОВЫВОЗ", "DeliveryYourself", "Home", new { }, new AjaxOptions { UpdateTargetId = "ContentId" })</li>
+                        <li>@Ajax.ActionLink("ГАРАНТИЯ", "Guarantee", "Home", new { }, new AjaxOptions { UpdateTargetId = "ContentId" })</li>
+                        <li>@Ajax.ActionLink("КОНТАКТЫ", "Contacts", "Home", new { }, new AjaxOptions { UpdateTargetId = "ContentId" })</li>
+
+                        @*<li><a class="test_clk" href="#">Оптовикам</a></li>*@
                     </ul>
 
                 </nav>
@@ -91,10 +96,22 @@
                     <div class="sidebar-contacts">
                         <div class="sidebar-contacts__title">Контакты</div>
                         <div class="sidebar-contacts__inner">
-                            <div class="sidebar-contacts__address">ТК "Савеловский"<br /> Павилионы: E-12, F-63</div>
-                            <div class="sidebar-contacts__item">Телефоны: <div class="sidebar-contacts__phone">(499)558-08-99, (495)789-5239</div></div>
-                            <div class="sidebar-contacts__item">Почта: <div class="sidebar-contacts__email">info@ht-comp.ru</div></div>
-                            <div class="sidebar-contacts__item">работаем с 10-00 до 21-00<br /> без выходных и перерыва на обед</div>
+                            <div class="sidebar-contacts__address">ТК "Савеловский Компьютерный"<br />
+                                г. Москва, ул. Сущевский Вал, дом 5, стр. 1А, павильон F-63
+                            </div>
+                            <div class="sidebar-contacts__item">Телефоны:<br /> 
+                                <div class="sidebar-contacts__phone">
+                                    <a href="tel:+74959759280">+7 (495) 975-92-80</a>
+                                    <br /> 
+                                    <a href="tel:+74995580899">+7 (499) 558-08-99</a>
+                                </div>
+                            </div>
+                            <div class="sidebar-contacts__item">Почта:<br /> 
+                                 <div class="sidebar-contacts__email">
+                                     <a href="mailto:info@ht-comp.ru">info@ht-comp.ru</a>
+                                </div>
+                            </div>
+                            <div class="sidebar-contacts__item">Время работы:<br />ежедневно, с 10-00 до 20-00</div>
                             <div class="sidebar-contacts__map"><img src="~/i/map.jpg" width="230" height="200" alt="" /></div>
                         </div><!-- .sidebar-contacts__inner -->
                     </div><!-- .sidebar-contacts -->
@@ -102,7 +119,7 @@
                 </aside><!-- .sidebar -->
 
 
-                <main class="content" id="ContentId">
+                <main class="content" @*id="ContentId"*@>
                     @RenderBody()
                 </main>
 
@@ -137,11 +154,14 @@
 
                 <nav class="footer__nav">
                     <ul>
-                        <li><a href="#">Гарантия</a></li>
-                        <li>@Ajax.ActionLink("Доставка", "Delivery", "Home", new { }, new AjaxOptions { UpdateTargetId = "ContentId" })</li>
-                        <li>@Ajax.ActionLink("Контакты", "Contacts", "Home", new { }, new AjaxOptions { UpdateTargetId = "ContentId" })</li>
-                        <li>@Ajax.ActionLink("О компании", "About", "Home", new { }, new AjaxOptions { UpdateTargetId = "ContentId" })</li>
-                        <li><a href="#">Оптовикам</a></li>
+                        <li>@Ajax.ActionLink("О КОМПАНИИ", "About", "Home", new { }, new AjaxOptions { UpdateTargetId = "ContentId" })</li>
+                        <li>@Ajax.ActionLink("ОПЛАТА ", "Pay", "Home", new { }, new AjaxOptions { UpdateTargetId = "ContentId" })</li>
+                        <li>@Ajax.ActionLink("ДОСТАВКА", "Delivery", "Home", new { }, new AjaxOptions { UpdateTargetId = "ContentId" })</li>
+                        <li>@Ajax.ActionLink("САМОВЫВОЗ", "DeliveryYourself", "Home", new { }, new AjaxOptions { UpdateTargetId = "ContentId" })</li>
+                        <li>@Ajax.ActionLink("ГАРАНТИЯ", "Guarantee", "Home", new { }, new AjaxOptions { UpdateTargetId = "ContentId" })</li>
+                        <li>@Ajax.ActionLink("КОНТАКТЫ", "Contacts", "Home", new { }, new AjaxOptions { UpdateTargetId = "ContentId" })</li>
+
+                        @*<li><a class="test_clk" href="#">Оптовикам</a></li>*@
 
                     </ul>
                 </nav>
@@ -154,10 +174,16 @@
                 <div class="footer__copyright">Гипер Трейд<br /> Все права защищены, 2017 г.</div>
 
                 <div class="footer__contacts">
-                    <p>ТК "Савеловский, павилионы: E-12, F-63</p>
-                    <p>Телефоны: <span class="footer__contacts-phones">(499)558-08-99, (495)789-5239</span></p>
-                    <p>Почта: info@ht-comp.ru</p>
-                    <p class="footer__contacts-time">Работаем с 10-00 до 21-00 без выходных<br /> и перерыва на обед</p>
+                    <p>ТК "Савеловский Компьютерный"</p>
+                    <p>г. Москва, ул. Сущевский Вал, дом 5, стр. 1А, павильон F-63</p>
+                    <p>Телефоны: <span class="footer__contacts-phones">
+                                     <a href="tel:+74959759280">+7 (495) 975-92-80</a>
+                                    , <a href="tel:+74995580899">+7 (499) 558-08-99</a>
+                        </span></p>
+                    <p>Почта:<br />
+                        <a href="mailto:info@ht-comp.ru">info@ht-comp.ru</a>
+                    </p>
+                    <p class="footer__contacts-time">Время работы:<br />ежедневно, с 10-00 до 20-00 </p>
                 </div><!-- .footer__contacts -->
 
             </div><!-- .footer__bottom -->

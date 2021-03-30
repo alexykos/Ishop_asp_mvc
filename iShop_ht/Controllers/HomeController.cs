@@ -25,13 +25,13 @@ namespace iShop_ht.Controllers
 
 
             int currentClass = 0;
-            
-            if (TempData["currentClass"] != null)
-            {
-                currentClass = int.Parse(TempData["currentClass"].ToString());
-                TempData.Keep();
-            }
 
+            //if (TempData["currentClass"] != null)
+            //{
+            //    currentClass = int.Parse(TempData["currentClass"].ToString());
+            //    TempData.Keep();
+            //}
+           
             //if (TempData["currentClass"] != null)
             //{
             //    currentClass = int.Parse(TempData["currentClass"].ToString());
@@ -110,15 +110,12 @@ namespace iShop_ht.Controllers
             //{
             //    int a = 1;
             //}
-            string currentSortOrder = "Price";
+
+            string currentSortOrder = "";
+            string lastSortOrder;
 
             if (ClassId != null) { TempData["currentClass"] = ClassId; }
-            if (SortOrder != "")
-            { TempData["currentSortOrder"] = SortOrder;
-                // если вызывается процедура с параметром сортировки, то сбрасываем страницы
-                page = 1;
-            }
-
+            if (SortOrder != "") { TempData["currentSortOrder"] = SortOrder; }
 
             int currentClass = 0;
             if (TempData["currentClass"] != null)
@@ -127,14 +124,42 @@ namespace iShop_ht.Controllers
                 TempData.Keep();
             }
 
-            if (TempData["currentSortOrder"] != null)
-            {
-                
-                currentSortOrder = TempData["currentSortOrder"].ToString();
-                if (currentSortOrder == "Price" && SortOrder == "Price") { currentSortOrder = "PriceDesc"; }
-                TempData.Keep();
-            }
 
+            if (SortOrder != "")
+            {
+                if (TempData["lastSortOrder"] != null)
+                {
+                    lastSortOrder = TempData["lastSortOrder"].ToString();
+                    
+                }
+                else
+                {
+                    lastSortOrder = "";
+                }
+                TempData["lastSortOrder"] = SortOrder;
+
+                if (TempData["currentSortOrder"] != null)
+                {
+                    currentSortOrder = TempData["currentSortOrder"].ToString();
+                    // если вызывается процедура с параметром сортировки, то сбрасываем страницы
+                    page = 1;
+
+                    if (SortOrder == "Price")
+                    {
+                        if (lastSortOrder == "Price")
+                        {
+                            currentSortOrder = "PriceDesc";
+                            TempData["lastSortOrder"] = "";
+                        }
+                        else
+                        { currentSortOrder = "Price"; }
+                    }
+                }
+
+            }
+            
+
+            
 
             int pageSize = 10;
             int pageNumber = page??1;
@@ -186,15 +211,38 @@ namespace iShop_ht.Controllers
             return PartialView();
         }
 
+        public ActionResult Pay()
+        {
+           
+            return PartialView();
+        }
+
+        public ActionResult DeliveryYourself()
+        {
+
+            return PartialView();
+        }
+
+        public ActionResult Guarantee()
+        {
+
+            return PartialView();
+        }
+
         [HttpGet]
         public ActionResult Commodity(int id = 0)
         {
-
+            /*
             var commodity2 = from cm in StoreDB.I_commodities
-                             join img in StoreDB.I_images on cm.Code equals img.Upcode
-                             where cm.Code == id && img.Ext == "txt"
-                             select new Commodity_property { Code = cm.Code, Name = cm.Name, Price = cm.Price, Property = img.Img };
+                             join img in StoreDB.I_images on cm.Code equals img.Upcode into im
+                             from imgEmpt in im.DefaultIfEmpty()
+                             where cm.Code == id && imgEmpt.Ext == "txt"
+                             select new Commodity_property { Code = cm.Code, Name = cm.Name, Price = cm.Price, Property = imgEmpt.Img  };
+            */
 
+            System.Data.SqlClient.SqlParameter param_class = new System.Data.SqlClient.SqlParameter("code", id);
+
+            var commodity2 = StoreDB.Database.SqlQuery<Commodity_property>("i_GetI_commodity_param @code ", param_class).ToList();
 
 
             return PartialView(commodity2);
