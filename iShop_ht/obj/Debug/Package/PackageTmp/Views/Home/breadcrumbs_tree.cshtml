@@ -11,7 +11,7 @@
         @*@Html.ActionLink("Главная", "IndexClass", "Home", new { Id = 0 }, null)*@
         @*<a href="#">@node.Name</a>*@
         <span class="arrow"></span>
-        foreach (var node in Model)
+        foreach (var node in Model.OrderByDescending(u => u.Sort))
         {
             <span class="sep"></span>
             @Ajax.ActionLink(@node.Name, "IndexClassPart", "Home", new { ClassId = @node.Code }, new AjaxOptions { UpdateTargetId = "ContentId" })

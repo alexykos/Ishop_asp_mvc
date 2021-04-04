@@ -1303,6 +1303,9 @@ textarea.contacts-form__field {
 .sidebar-contacts {
 	border: 1px solid #EBEBEB;
 }
+.filter__block{
+    width:210px
+}
 .filter__title,
 .sidebar-contacts__title {
 	height: 40px;

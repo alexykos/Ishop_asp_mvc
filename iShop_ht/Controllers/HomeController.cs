@@ -191,6 +191,26 @@ namespace iShop_ht.Controllers
 
         }
 
+        public ActionResult SearchGoods(string name)
+        {
+            //if (Request.IsAjaxRequest())
+            //{
+            //    int a = 1;
+            //}
+            int pageSize = 10
+                , pageNumber = 1;
+                
+
+            System.Data.SqlClient.SqlParameter param_class = new System.Data.SqlClient.SqlParameter("searchName", name);
+            System.Data.SqlClient.SqlParameter param_top = new System.Data.SqlClient.SqlParameter("top", pageSize);
+
+            var I_commodities = StoreDB.Database.SqlQuery<I_commodity>("GetI_commodities_search @searchName, @top ", param_class, param_top).ToList();
+
+
+            return PartialView("IndexClassPart",I_commodities.ToPagedList(pageNumber, pageSize));
+
+        }
+
         public ActionResult About(int? Id)
         {
             //if (Request.IsAjaxRequest())
