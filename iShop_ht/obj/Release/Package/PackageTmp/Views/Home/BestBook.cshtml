@@ -1,0 +1,11 @@
+﻿
+@model IEnumerable<iShop_ht.Models.Book>
+
+@foreach (var b in ViewBag.Books)
+            {
+    @b.Name
+    @b.Author
+    @b.Price
+    <a href="/Home/Buy/@b.Id">Купить</a>
+    <br />
+}

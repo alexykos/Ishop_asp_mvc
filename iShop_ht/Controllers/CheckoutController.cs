@@ -123,7 +123,7 @@ namespace iShop_ht.Controllers
                                   where ord.OrderId == id
                                   select (int?)ord.Quantity *
                                   ord.Price).Sum();
-                ViewData["orderTotal"] = total;
+                ViewData["orderTotal"] = String.Format("{0:### ### ###}", total);
                 ViewData["orderId"] = id;
                 IEnumerable<OrderDetail> OrderDetails = StoreDB.OrderDetails.Where(x => x.OrderId == id);
                 return View(OrderDetails);

@@ -2,7 +2,6 @@
 @{
     Layout = null;
 }
-
 <div class="container">
     <div class="wrapper">
 
@@ -43,10 +42,12 @@
                 </div><!-- .checkout__items -->
 
                 <div class="checkout__bottom">
-                    <div class="checkout__total">
-                        Итого: <span class="number" style="font-size: 20px;font-weight: bold;color: #F15C15;">
-                            <span style="font-size: 24px;">@ViewData["orderTotal"]</span> руб.
+                    <div class="checkout__total" >
+                        <span style="font-size: 20px;font-weight: bold;color: black;">Итого: </span><span class="number" style="font-size: 20px;font-weight: bold;color: #F15C15;">
+                            <span style="font-size: 24px;">@ViewData["orderTotal"]</span> 
+                         руб.
                         </span>
+                        @*<span style="font-family: 'PT Sans', serif;">&#8399;</span>*@
                     </div>
 
                 </div><!-- .checkout__bottom -->
