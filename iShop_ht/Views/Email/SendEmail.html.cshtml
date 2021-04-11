@@ -17,7 +17,7 @@
 	font-size: 14px;
 	color: #6E6E6E;">
 
-                <div class="checkout__items" style="display: table;	border-top: 1px dashed #FFF;">
+                <div class="checkout__items" style="display: table;	border-top: 2px solid #FFF;">
                     @foreach (var item in Model)
                     {
                         <div class="checkout-item" style="display: table-row;">
@@ -41,10 +41,10 @@
                         </div><!-- .checkout-item -->
                     }
                 </div><!-- .checkout__items -->
-
-                <div class="checkout__bottom">
+                <div class="checkout__items" style="display: table-row;	">&nbsp;</div>
+                <div class="checkout__bottom"  style="border-top: 2px solid #FFF;">
                     <div class="checkout__total">
-                        Итого: <span class="number" style="font-size: 20px;font-weight: bold;color: #F15C15;">
+                       <span style="font-size: 24px;font-weight: bold;"> Итого: </span><span class="number" style="font-size: 20px;font-weight: bold;color: #F15C15;">
                             <span style="font-size: 24px;">@ViewData["orderTotal"]</span> руб.
                         </span>
                     </div>
@@ -63,7 +63,7 @@
             <div class="footer__bottom">
 
                 <div class="footer__contacts">
-                    <p>ТК "Савеловский, павилионы: E-12, F-63</p>
+                    <p>ТК "Савеловский, павилионы:F-63</p>
                     <p>Телефоны: <span class="footer__contacts-phones">(499)558-08-99, (495)789-5239</span></p>
                     <p>Почта: info@ht-comp.ru</p>
                     <p class="footer__contacts-time">Работаем с 10-00 до 21-00 без выходных<br /> и перерыва на обед</p>
