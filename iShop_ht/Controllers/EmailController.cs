@@ -35,7 +35,7 @@ namespace iShop_ht.Controllers
                               where ord.OrderId == orderId
                               select (int?)ord.Quantity *
                               ord.Price).Sum();
-            ViewData["orderTotal"] = total;
+            ViewData["orderTotal"] = String.Format("{0:### ### ###}", total) ;
             ViewData["orderiD"] = orderId;
             IEnumerable<OrderDetail> OrderDetails = StoreDB.OrderDetails.Where(x => x.OrderId == orderId);
 

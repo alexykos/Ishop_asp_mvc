@@ -1,0 +1,40 @@
+﻿@model IEnumerable<iShop_ht.Models.OrderDetail>
+@{
+    ViewBag.Title = "Complete";
+    Layout = "~/Views/Shared/_Layout_notTree.cshtml";
+}
+
+<div class="breadcrumbs">
+    <a href="\">Главная</a> <span class="sep"></span>
+</div><!-- .breadcrumbs -->
+
+
+<h1 class="page-title">
+    Спасибо за ваш заказ! Номер вашего заказа: @ViewData["orderId"]
+</h1>
+
+@*@foreach (var b in Model)
+    {
+        @b.Price
+    }*@
+
+<form action="" class="checkout">
+    <div class="checkout__items">
+
+        @foreach (var item in Model)
+        {
+            <div class="checkout-item">
+                <div class="checkout-item__title">@item.I_commodity.Name</div>
+                <div class="checkout-item__number">
+                    Кол-во:
+                    <input type="text" value="@item.Quantity" class="checkout__input" />
+                </div>
+                <div class="checkout-item__price">Цена: <span class="number"><span>@item.Price</span> руб.</span></div>
+            </div><!-- .checkout-item -->
+
+        }
+    </div> <!--checkout__items-->
+    <div class="checkout__bottom">
+        <div class="checkout__total">Итого: <span class="number"><span> @ViewData["orderTotal"]</span> руб.</span></div>
+    </div><!-- .checkout__bottom -->
+</form>

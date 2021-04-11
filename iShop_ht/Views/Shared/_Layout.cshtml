@@ -72,9 +72,9 @@
                 </a>
 
                 @*<form action="" method="post" class="search-form">*@
-                @using (Ajax.BeginForm("SearchGoods","Home", new AjaxOptions { UpdateTargetId = "ContentId" }, new { @class = "search-form" }))
+                @using (Ajax.BeginForm("IndexClassPart", "Home", new AjaxOptions { UpdateTargetId = "ContentId" }, new { @class = "search-form" }))
                 {
-                    <input type="text" onfocus="this.value=''" name="name" class="search-form__field" />
+                    <input type="text" onfocus="this.value=''" name="SearchGoods" class="search-form__field" />
                     <input type="submit" value="" class="search-form__button" />
                 }
 
@@ -222,10 +222,15 @@
 
 
         });
+        $(".search-form__field").keyup(function (event) {
+            if (event.which === 13) {
+                $('.search-form').submit();
+            }
 
+        });
         //$(".test_clk").click(function () {
         //    alert("AAAAAAAAAAAAAAAA");
         //});
 
-    });
+        });
 </script>

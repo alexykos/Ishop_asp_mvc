@@ -99,7 +99,7 @@ namespace iShop_ht.Controllers
 
         }
 
-        public ActionResult IndexClassPart(int? ClassId, int? page, string SortOrder = "")
+        public ActionResult IndexClassPart(int? ClassId, int? page, string SortOrder = "", string SearchGoods = "")
         {
 
 
@@ -113,9 +113,13 @@ namespace iShop_ht.Controllers
 
             string currentSortOrder = "";
             string lastSortOrder;
+            string searchGoodsFilt = "";
 
-            if (ClassId != null) { TempData["currentClass"] = ClassId; }
+            if (ClassId != null) { TempData["currentClass"] = ClassId;
+                TempData["searchGoodsFilt"] = null;
+                                    }
             if (SortOrder != "") { TempData["currentSortOrder"] = SortOrder; }
+            if (SearchGoods != "") { TempData["searchGoodsFilt"] = SearchGoods; }
 
             int currentClass = 0;
             if (TempData["currentClass"] != null)
@@ -123,6 +127,14 @@ namespace iShop_ht.Controllers
                 currentClass = int.Parse(TempData["currentClass"].ToString());
                 TempData.Keep();
             }
+
+           
+                if (TempData["searchGoodsFilt"] != null)
+                { 
+                    searchGoodsFilt = TempData["searchGoodsFilt"].ToString();
+                    TempData.Keep();
+                }
+           
 
 
             if (SortOrder != "")
@@ -167,8 +179,8 @@ namespace iShop_ht.Controllers
 
 
             System.Data.SqlClient.SqlParameter param_class = new System.Data.SqlClient.SqlParameter("Class", currentClass);
-
-            var I_commodities = StoreDB.Database.SqlQuery<I_commodity>("GetI_commodities_class @Class ", param_class).ToList();
+            System.Data.SqlClient.SqlParameter param_search = new System.Data.SqlClient.SqlParameter("searchGoods", searchGoodsFilt);
+            var I_commodities = StoreDB.Database.SqlQuery<I_commodity>("GetI_commodities_class @Class, @searchGoods ", param_class, param_search).ToList();
 
 
            
@@ -177,13 +189,13 @@ namespace iShop_ht.Controllers
             {
                 case "Price":
                     return PartialView(I_commodities.OrderBy(s => s.Price).ToPagedList(pageNumber, pageSize));
-                    break;
+                    
                 case "PriceDesc":
                     return PartialView(I_commodities.OrderByDescending(s => s.Price).ToPagedList(pageNumber, pageSize));
-                    break;
+                    
                 default:
                     return PartialView(I_commodities.OrderBy(s => s.Price).ToPagedList(pageNumber, pageSize));
-                    break;
+                    
             }
            
 
