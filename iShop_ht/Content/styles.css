@@ -1268,6 +1268,16 @@ textarea.contacts-form__field {
 .catalog__ul1 ul{
 	
 }
+
+.about_catalog__ul{
+    margin-top:10px;
+    color:#08c;
+}
+
+.about_catalog__ul a{
+    color:#08c;
+}
+
 .flex{
 	-webkit-display:flex;
 	-moz-display:flex;

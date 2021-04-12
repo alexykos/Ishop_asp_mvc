@@ -264,7 +264,7 @@
     <Content Include="Views\Home\IndexClassPart.cshtml" />
     <Content Include="Views\Home\Commodity111.cshtml" />
     <Content Include="Views\Home\breadcrumbs_tree.cshtml" />
-    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\About2.cshtml" />
     <Content Include="Views\Home\MainPanel.cshtml" />
     <Content Include="Views\Home\Commodity.cshtml" />
     <Content Include="Views\Home\Contacts.cshtml" />
@@ -278,6 +278,7 @@
     <Content Include="Views\Home\Pay.cshtml" />
     <Content Include="Views\Home\DeliveryYourself.cshtml" />
     <Content Include="Views\Home\Guarantee.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

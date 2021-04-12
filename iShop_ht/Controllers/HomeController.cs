@@ -229,8 +229,10 @@ namespace iShop_ht.Controllers
             //{
             //    int a = 1;
             //}
-            return PartialView();
+            var clss = StoreDB.Database.SqlQuery<I_class>("i_getClassForTree").ToList();
 
+            return PartialView(clss);
+            
         }
 
 
