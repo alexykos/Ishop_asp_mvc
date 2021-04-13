@@ -49,11 +49,13 @@
                 <div class="header__nav-toggle"></div>
                 <nav class="header__nav">
                     <ul>
-                        <li><a href="#">Гарантия</a></li>
-                        <li><a href="/Home/Delivery">Доставка</a></li>
-                        <li><a href="/Home/Contacts">Контакты</a></li>
-                        <li><a href="/Home/About">О компании</a></li>
-                        <li><a href="#">Оптовикам</a></li>
+                        <li>@Ajax.ActionLink("О КОМПАНИИ", "About", "Home", new { }, new AjaxOptions { UpdateTargetId = "ContentId" })</li>
+                        <li>@Ajax.ActionLink("ОПЛАТА ", "Pay", "Home", new { }, new AjaxOptions { UpdateTargetId = "ContentId" })</li>
+                        <li>@Ajax.ActionLink("ДОСТАВКА", "Delivery", "Home", new { }, new AjaxOptions { UpdateTargetId = "ContentId" })</li>
+                        <li>@Ajax.ActionLink("САМОВЫВОЗ", "DeliveryYourself", "Home", new { }, new AjaxOptions { UpdateTargetId = "ContentId" })</li>
+                        <li>@Ajax.ActionLink("ГАРАНТИЯ", "Guarantee", "Home", new { }, new AjaxOptions { UpdateTargetId = "ContentId" })</li>
+                        <li>@Ajax.ActionLink("КОНТАКТЫ", "Contacts", "Home", new { }, new AjaxOptions { UpdateTargetId = "ContentId" })</li>
+
                     </ul>
 
                 </nav>
@@ -121,11 +123,13 @@
 
                     <nav class="footer__nav">
                         <ul>
-                            <li><a href="#">Гарантия</a></li>
-                            <li><a href="/Home/Delivery">Доставка</a></li>
-                            <li><a href="/Home/Contacts">Контакты</a></li>
-                            <li><a href="/Home/About">О компании</a></li>
-                            <li><a href="#">Оптовикам</a></li>
+                            <li>@Ajax.ActionLink("О КОМПАНИИ", "About", "Home", new { }, new AjaxOptions { UpdateTargetId = "ContentId" })</li>
+                            <li>@Ajax.ActionLink("ОПЛАТА ", "Pay", "Home", new { }, new AjaxOptions { UpdateTargetId = "ContentId" })</li>
+                            <li>@Ajax.ActionLink("ДОСТАВКА", "Delivery", "Home", new { }, new AjaxOptions { UpdateTargetId = "ContentId" })</li>
+                            <li>@Ajax.ActionLink("САМОВЫВОЗ", "DeliveryYourself", "Home", new { }, new AjaxOptions { UpdateTargetId = "ContentId" })</li>
+                            <li>@Ajax.ActionLink("ГАРАНТИЯ", "Guarantee", "Home", new { }, new AjaxOptions { UpdateTargetId = "ContentId" })</li>
+                            <li>@Ajax.ActionLink("КОНТАКТЫ", "Contacts", "Home", new { }, new AjaxOptions { UpdateTargetId = "ContentId" })</li>
+
                         </ul>
                     </nav>
 
