@@ -34,10 +34,10 @@
       <publishTime>04/04/2021 23:09:35</publishTime>
     </File>
     <File Include="bin/iShop_ht.dll">
-      <publishTime>05/04/2021 17:29:59</publishTime>
+      <publishTime>04/13/2021 13:54:32</publishTime>
     </File>
     <File Include="bin/iShop_ht.pdb">
-      <publishTime>05/04/2021 17:29:59</publishTime>
+      <publishTime>04/13/2021 13:54:32</publishTime>
     </File>
     <File Include="bin/Microsoft.AspNet.Identity.Core.dll">
       <publishTime>04/04/2021 23:09:36</publishTime>
@@ -226,7 +226,7 @@
       <publishTime>04/04/2021 23:09:35</publishTime>
     </File>
     <File Include="Content/styles.css">
-      <publishTime>04/04/2021 23:09:35</publishTime>
+      <publishTime>04/12/2021 17:02:46</publishTime>
     </File>
     <File Include="favicon.ico">
       <publishTime>04/04/2021 23:09:35</publishTime>
@@ -310,9 +310,12 @@
       <publishTime>04/08/2021 13:18:10</publishTime>
     </File>
     <File Include="Views/Email/SendEmail.html.cshtml">
-      <publishTime>04/08/2021 13:25:58</publishTime>
+      <publishTime>04/13/2021 13:07:38</publishTime>
     </File>
     <File Include="Views/Home/About.cshtml">
+      <publishTime>04/13/2021 12:36:15</publishTime>
+    </File>
+    <File Include="Views/Home/About2.cshtml">
       <publishTime>04/04/2021 23:09:35</publishTime>
     </File>
     <File Include="Views/Home/BestBook.cshtml">
@@ -355,7 +358,7 @@
       <publishTime>04/04/2021 23:09:35</publishTime>
     </File>
     <File Include="Views/Home/_TreeList2.cshtml">
-      <publishTime>04/04/2021 23:09:35</publishTime>
+      <publishTime>04/13/2021 12:30:03</publishTime>
     </File>
     <File Include="Views/Shared/Error.cshtml">
       <publishTime>04/04/2021 23:09:35</publishTime>
@@ -367,7 +370,7 @@
       <publishTime>04/09/2021 11:51:03</publishTime>
     </File>
     <File Include="Views/Shared/_Layout_notTree.cshtml">
-      <publishTime>04/04/2021 23:09:35</publishTime>
+      <publishTime>04/13/2021 12:29:55</publishTime>
     </File>
     <File Include="Views/Shared/_LoginPartial.cshtml">
       <publishTime>04/04/2021 23:09:35</publishTime>
@@ -385,7 +388,7 @@
       <publishTime>04/04/2021 23:09:35</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>04/09/2021 11:56:07</publishTime>
+      <publishTime>04/13/2021 13:54:33</publishTime>
     </File>
   </ItemGroup>
 </Project>

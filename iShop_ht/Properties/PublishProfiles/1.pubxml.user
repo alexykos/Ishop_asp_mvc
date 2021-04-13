@@ -5,23 +5,10 @@
 -->
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
-    <TimeStampOfAssociatedLegacyPublishXmlFile />
     <_PublishTargetUrl>C:\inetpub\wwwroot\SAV_iShop_source</_PublishTargetUrl>
   </PropertyGroup>
   <ItemGroup>
     <File Include="bin/ActionMailer.Net.dll">
-<<<<<<< HEAD
-      <publishTime>05/08/2012 20:14:18</publishTime>
-    </File>
-    <File Include="bin/ActionMailer.Net.Mvc.dll">
-      <publishTime>05/08/2012 20:14:18</publishTime>
-    </File>
-    <File Include="bin/ActionMailer.Net.Mvc.pdb">
-      <publishTime>05/08/2012 20:14:18</publishTime>
-    </File>
-    <File Include="bin/ActionMailer.Net.pdb">
-      <publishTime>05/08/2012 20:14:18</publishTime>
-=======
       <publishTime>04/04/2021 23:09:35</publishTime>
     </File>
     <File Include="bin/ActionMailer.Net.Mvc.dll">
@@ -32,7 +19,6 @@
     </File>
     <File Include="bin/ActionMailer.Net.pdb">
       <publishTime>04/04/2021 23:09:35</publishTime>
->>>>>>> 2fde85423f7b10c4fbe7b032c7494cf37d9ba22f
     </File>
     <File Include="bin/Antlr3.Runtime.dll">
       <publishTime>04/04/2021 23:09:35</publishTime>
@@ -41,37 +27,16 @@
       <publishTime>04/04/2021 23:09:35</publishTime>
     </File>
     <File Include="bin/EntityFramework.dll">
-<<<<<<< HEAD
-      <publishTime>02/03/2015 09:32:26</publishTime>
-    </File>
-    <File Include="bin/EntityFramework.SqlServer.dll">
-      <publishTime>02/03/2015 09:32:26</publishTime>
-    </File>
-    <File Include="bin/iShop_ht.dll">
-      <publishTime>04/11/2021 21:37:35</publishTime>
-    </File>
-    <File Include="bin/iShop_ht.pdb">
-      <publishTime>04/11/2021 21:37:35</publishTime>
-    </File>
-    <File Include="bin/Microsoft.AspNet.Identity.Core.dll">
-      <publishTime>03/04/2015 17:07:22</publishTime>
-    </File>
-    <File Include="bin/Microsoft.AspNet.Identity.EntityFramework.dll">
-      <publishTime>03/04/2015 17:07:22</publishTime>
-    </File>
-    <File Include="bin/Microsoft.AspNet.Identity.Owin.dll">
-      <publishTime>03/04/2015 17:07:22</publishTime>
-=======
       <publishTime>04/04/2021 23:09:35</publishTime>
     </File>
     <File Include="bin/EntityFramework.SqlServer.dll">
       <publishTime>04/04/2021 23:09:35</publishTime>
     </File>
     <File Include="bin/iShop_ht.dll">
-      <publishTime>04/09/2021 12:00:55</publishTime>
+      <publishTime>04/13/2021 13:54:48</publishTime>
     </File>
     <File Include="bin/iShop_ht.pdb">
-      <publishTime>04/09/2021 12:00:55</publishTime>
+      <publishTime>04/13/2021 13:54:48</publishTime>
     </File>
     <File Include="bin/Microsoft.AspNet.Identity.Core.dll">
       <publishTime>04/04/2021 23:09:36</publishTime>
@@ -81,7 +46,6 @@
     </File>
     <File Include="bin/Microsoft.AspNet.Identity.Owin.dll">
       <publishTime>04/04/2021 23:09:36</publishTime>
->>>>>>> 2fde85423f7b10c4fbe7b032c7494cf37d9ba22f
     </File>
     <File Include="bin/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll">
       <publishTime>04/04/2021 23:09:36</publishTime>
@@ -117,11 +81,7 @@
       <publishTime>04/04/2021 23:09:36</publishTime>
     </File>
     <File Include="bin/Newtonsoft.Json.dll">
-<<<<<<< HEAD
-      <publishTime>03/08/2014 21:33:56</publishTime>
-=======
       <publishTime>04/04/2021 23:09:36</publishTime>
->>>>>>> 2fde85423f7b10c4fbe7b032c7494cf37d9ba22f
     </File>
     <File Include="bin/Owin.dll">
       <publishTime>04/04/2021 23:09:36</publishTime>
@@ -169,21 +129,6 @@
       <publishTime>04/04/2021 23:09:36</publishTime>
     </File>
     <File Include="bin/ru/EntityFramework.resources.dll">
-<<<<<<< HEAD
-      <publishTime>02/03/2015 09:32:38</publishTime>
-    </File>
-    <File Include="bin/ru/EntityFramework.SqlServer.resources.dll">
-      <publishTime>02/03/2015 09:32:38</publishTime>
-    </File>
-    <File Include="bin/ru/Microsoft.AspNet.Identity.Core.resources.dll">
-      <publishTime>03/04/2015 17:09:50</publishTime>
-    </File>
-    <File Include="bin/ru/Microsoft.AspNet.Identity.EntityFramework.resources.dll">
-      <publishTime>03/04/2015 17:09:52</publishTime>
-    </File>
-    <File Include="bin/ru/Microsoft.AspNet.Identity.Owin.resources.dll">
-      <publishTime>03/04/2015 17:09:52</publishTime>
-=======
       <publishTime>04/04/2021 23:09:35</publishTime>
     </File>
     <File Include="bin/ru/EntityFramework.SqlServer.resources.dll">
@@ -197,7 +142,6 @@
     </File>
     <File Include="bin/ru/Microsoft.AspNet.Identity.Owin.resources.dll">
       <publishTime>04/04/2021 23:09:36</publishTime>
->>>>>>> 2fde85423f7b10c4fbe7b032c7494cf37d9ba22f
     </File>
     <File Include="bin/ru/Microsoft.Owin.Host.SystemWeb.resources.dll">
       <publishTime>04/04/2021 23:09:36</publishTime>
@@ -227,11 +171,7 @@
       <publishTime>04/04/2021 23:09:36</publishTime>
     </File>
     <File Include="bin/ru/System.Web.Optimization.resources.dll">
-<<<<<<< HEAD
-      <publishTime>11/02/2014 15:28:42</publishTime>
-=======
       <publishTime>04/04/2021 23:09:36</publishTime>
->>>>>>> 2fde85423f7b10c4fbe7b032c7494cf37d9ba22f
     </File>
     <File Include="bin/ru/System.Web.Razor.resources.dll">
       <publishTime>04/04/2021 23:09:36</publishTime>
@@ -252,11 +192,7 @@
       <publishTime>04/04/2021 23:09:36</publishTime>
     </File>
     <File Include="bin/System.Web.Optimization.dll">
-<<<<<<< HEAD
-      <publishTime>11/02/2014 16:26:04</publishTime>
-=======
       <publishTime>04/04/2021 23:09:36</publishTime>
->>>>>>> 2fde85423f7b10c4fbe7b032c7494cf37d9ba22f
     </File>
     <File Include="bin/System.Web.Razor.dll">
       <publishTime>04/04/2021 23:09:36</publishTime>
@@ -271,15 +207,6 @@
       <publishTime>04/04/2021 23:09:36</publishTime>
     </File>
     <File Include="bin/WebGrease.dll">
-<<<<<<< HEAD
-      <publishTime>10/09/2013 18:28:38</publishTime>
-    </File>
-    <File Include="Content/bootstrap.css">
-      <publishTime>03/10/2020 23:31:38</publishTime>
-    </File>
-    <File Include="Content/bootstrap.min.css">
-      <publishTime>03/10/2020 23:31:38</publishTime>
-=======
       <publishTime>04/04/2021 23:09:36</publishTime>
     </File>
     <File Include="Content/bootstrap.css">
@@ -287,47 +214,18 @@
     </File>
     <File Include="Content/bootstrap.min.css">
       <publishTime>04/04/2021 23:09:35</publishTime>
->>>>>>> 2fde85423f7b10c4fbe7b032c7494cf37d9ba22f
     </File>
     <File Include="Content/MyStyle.css">
       <publishTime>04/04/2021 23:09:35</publishTime>
     </File>
     <File Include="Content/PagedList.css">
-<<<<<<< HEAD
-      <publishTime>09/10/2020 01:21:14</publishTime>
-=======
       <publishTime>04/04/2021 23:09:35</publishTime>
->>>>>>> 2fde85423f7b10c4fbe7b032c7494cf37d9ba22f
     </File>
     <File Include="Content/Site.css">
       <publishTime>04/04/2021 23:09:35</publishTime>
     </File>
     <File Include="Content/styles.css">
-<<<<<<< HEAD
-      <publishTime>01/04/2021 17:22:21</publishTime>
-    </File>
-    <File Include="favicon.ico">
-      <publishTime>03/10/2020 23:31:34</publishTime>
-    </File>
-    <File Include="fonts/glyphicons-halflings-regular.eot">
-      <publishTime>03/10/2020 23:31:38</publishTime>
-    </File>
-    <File Include="fonts/glyphicons-halflings-regular.svg">
-      <publishTime>03/10/2020 23:31:38</publishTime>
-    </File>
-    <File Include="fonts/glyphicons-halflings-regular.ttf">
-      <publishTime>03/10/2020 23:31:38</publishTime>
-    </File>
-    <File Include="fonts/glyphicons-halflings-regular.woff">
-      <publishTime>03/10/2020 23:31:38</publishTime>
-    </File>
-    <File Include="Global.asax">
-      <publishTime>03/10/2020 23:31:34</publishTime>
-    </File>
-    <File Include="packages.config">
-      <publishTime>09/10/2020 01:21:14</publishTime>
-=======
-      <publishTime>04/04/2021 23:09:35</publishTime>
+      <publishTime>04/12/2021 17:02:46</publishTime>
     </File>
     <File Include="favicon.ico">
       <publishTime>04/04/2021 23:09:35</publishTime>
@@ -349,48 +247,11 @@
     </File>
     <File Include="packages.config">
       <publishTime>04/04/2021 23:09:35</publishTime>
->>>>>>> 2fde85423f7b10c4fbe7b032c7494cf37d9ba22f
     </File>
     <File Include="Scripts/AddressAndPayment.js">
       <publishTime>04/04/2021 23:09:35</publishTime>
     </File>
     <File Include="Scripts/bootstrap.js">
-<<<<<<< HEAD
-      <publishTime>03/10/2020 23:31:38</publishTime>
-    </File>
-    <File Include="Scripts/bootstrap.min.js">
-      <publishTime>03/10/2020 23:31:37</publishTime>
-    </File>
-    <File Include="Scripts/jquery-1.10.2.js">
-      <publishTime>03/10/2020 23:31:38</publishTime>
-    </File>
-    <File Include="Scripts/jquery-1.10.2.min.js">
-      <publishTime>03/10/2020 23:31:38</publishTime>
-    </File>
-    <File Include="Scripts/jquery-1.10.2.min.map">
-      <publishTime>03/10/2020 23:31:38</publishTime>
-    </File>
-    <File Include="Scripts/jquery.unobtrusive-ajax.js">
-      <publishTime>04/10/2020 01:39:16</publishTime>
-    </File>
-    <File Include="Scripts/jquery.unobtrusive-ajax.min.js">
-      <publishTime>04/10/2020 01:39:16</publishTime>
-    </File>
-    <File Include="Scripts/jquery.validate.js">
-      <publishTime>03/10/2020 23:31:43</publishTime>
-    </File>
-    <File Include="Scripts/jquery.validate.min.js">
-      <publishTime>03/10/2020 23:31:43</publishTime>
-    </File>
-    <File Include="Scripts/jquery.validate.unobtrusive.js">
-      <publishTime>03/10/2020 23:31:43</publishTime>
-    </File>
-    <File Include="Scripts/jquery.validate.unobtrusive.min.js">
-      <publishTime>03/10/2020 23:31:43</publishTime>
-    </File>
-    <File Include="Scripts/modernizr-2.6.2.js">
-      <publishTime>03/10/2020 23:31:42</publishTime>
-=======
       <publishTime>04/04/2021 23:09:35</publishTime>
     </File>
     <File Include="Scripts/bootstrap.min.js">
@@ -425,23 +286,15 @@
     </File>
     <File Include="Scripts/modernizr-2.6.2.js">
       <publishTime>04/04/2021 23:09:35</publishTime>
->>>>>>> 2fde85423f7b10c4fbe7b032c7494cf37d9ba22f
     </File>
     <File Include="Scripts/myScript.js">
       <publishTime>04/04/2021 23:09:35</publishTime>
     </File>
     <File Include="Scripts/respond.js">
-<<<<<<< HEAD
-      <publishTime>03/10/2020 23:31:42</publishTime>
-    </File>
-    <File Include="Scripts/respond.min.js">
-      <publishTime>03/10/2020 23:31:42</publishTime>
-=======
       <publishTime>04/04/2021 23:09:35</publishTime>
     </File>
     <File Include="Scripts/respond.min.js">
       <publishTime>04/04/2021 23:09:35</publishTime>
->>>>>>> 2fde85423f7b10c4fbe7b032c7494cf37d9ba22f
     </File>
     <File Include="Scripts/scripts.js">
       <publishTime>04/04/2021 23:09:35</publishTime>
@@ -450,35 +303,21 @@
       <publishTime>04/04/2021 23:09:35</publishTime>
     </File>
     <File Include="Views/Checkout/AddressAndPayment.cshtml">
-<<<<<<< HEAD
-      <publishTime>01/04/2021 17:56:28</publishTime>
-=======
       <publishTime>04/04/2021 23:09:35</publishTime>
->>>>>>> 2fde85423f7b10c4fbe7b032c7494cf37d9ba22f
     </File>
     <File Include="Views/Checkout/Complete.cshtml">
       <publishTime>04/08/2021 13:18:10</publishTime>
     </File>
     <File Include="Views/Email/SendEmail.html.cshtml">
-<<<<<<< HEAD
-      <publishTime>04/12/2021 00:33:24</publishTime>
-=======
-      <publishTime>04/08/2021 13:25:58</publishTime>
->>>>>>> 2fde85423f7b10c4fbe7b032c7494cf37d9ba22f
+      <publishTime>04/13/2021 14:19:54</publishTime>
     </File>
     <File Include="Views/Home/About.cshtml">
+      <publishTime>04/13/2021 12:36:15</publishTime>
+    </File>
+    <File Include="Views/Home/About2.cshtml">
       <publishTime>04/04/2021 23:09:35</publishTime>
     </File>
     <File Include="Views/Home/BestBook.cshtml">
-<<<<<<< HEAD
-      <publishTime>04/10/2020 01:51:54</publishTime>
-    </File>
-    <File Include="Views/Home/breadcrumbs_tree.cshtml">
-      <publishTime>01/04/2021 18:48:04</publishTime>
-    </File>
-    <File Include="Views/Home/Commodity.cshtml">
-      <publishTime>07/12/2020 21:15:11</publishTime>
-=======
       <publishTime>04/04/2021 23:09:35</publishTime>
     </File>
     <File Include="Views/Home/breadcrumbs_tree.cshtml">
@@ -486,27 +325,18 @@
     </File>
     <File Include="Views/Home/Commodity.cshtml">
       <publishTime>04/04/2021 23:09:35</publishTime>
->>>>>>> 2fde85423f7b10c4fbe7b032c7494cf37d9ba22f
     </File>
     <File Include="Views/Home/Commodity111.cshtml">
       <publishTime>04/04/2021 23:09:35</publishTime>
     </File>
     <File Include="Views/Home/Contacts.cshtml">
-<<<<<<< HEAD
-      <publishTime>01/04/2021 17:41:34</publishTime>
-=======
       <publishTime>04/04/2021 23:09:35</publishTime>
->>>>>>> 2fde85423f7b10c4fbe7b032c7494cf37d9ba22f
     </File>
     <File Include="Views/Home/Delivery.cshtml">
       <publishTime>04/04/2021 23:09:35</publishTime>
     </File>
     <File Include="Views/Home/DeliveryYourself.cshtml">
-<<<<<<< HEAD
-      <publishTime>01/04/2021 16:56:40</publishTime>
-=======
       <publishTime>04/05/2021 16:14:32</publishTime>
->>>>>>> 2fde85423f7b10c4fbe7b032c7494cf37d9ba22f
     </File>
     <File Include="Views/Home/Guarantee.cshtml">
       <publishTime>04/04/2021 23:09:35</publishTime>
@@ -527,33 +357,22 @@
       <publishTime>04/04/2021 23:09:35</publishTime>
     </File>
     <File Include="Views/Home/_TreeList2.cshtml">
-      <publishTime>04/04/2021 23:09:35</publishTime>
+      <publishTime>04/13/2021 12:30:03</publishTime>
     </File>
     <File Include="Views/Shared/Error.cshtml">
-<<<<<<< HEAD
-      <publishTime>03/10/2020 23:31:44</publishTime>
-    </File>
-    <File Include="Views/Shared/Lockout.cshtml">
-      <publishTime>03/10/2020 23:31:44</publishTime>
-=======
       <publishTime>04/04/2021 23:09:35</publishTime>
     </File>
     <File Include="Views/Shared/Lockout.cshtml">
       <publishTime>04/04/2021 23:09:35</publishTime>
->>>>>>> 2fde85423f7b10c4fbe7b032c7494cf37d9ba22f
     </File>
     <File Include="Views/Shared/_Layout.cshtml">
       <publishTime>04/09/2021 11:51:03</publishTime>
     </File>
     <File Include="Views/Shared/_Layout_notTree.cshtml">
-      <publishTime>04/04/2021 23:09:35</publishTime>
+      <publishTime>04/13/2021 12:29:55</publishTime>
     </File>
     <File Include="Views/Shared/_LoginPartial.cshtml">
-<<<<<<< HEAD
-      <publishTime>03/10/2020 23:31:44</publishTime>
-=======
       <publishTime>04/04/2021 23:09:35</publishTime>
->>>>>>> 2fde85423f7b10c4fbe7b032c7494cf37d9ba22f
     </File>
     <File Include="Views/ShoppingCart/CartSummary.cshtml">
       <publishTime>04/04/2021 23:09:35</publishTime>
@@ -562,20 +381,13 @@
       <publishTime>04/04/2021 23:09:35</publishTime>
     </File>
     <File Include="Views/Web.config">
-<<<<<<< HEAD
-      <publishTime>03/10/2020 23:31:34</publishTime>
-    </File>
-    <File Include="Views/_ViewStart.cshtml">
-      <publishTime>03/10/2020 23:31:34</publishTime>
-=======
       <publishTime>04/04/2021 23:09:35</publishTime>
     </File>
     <File Include="Views/_ViewStart.cshtml">
       <publishTime>04/04/2021 23:09:35</publishTime>
->>>>>>> 2fde85423f7b10c4fbe7b032c7494cf37d9ba22f
     </File>
     <File Include="Web.config">
-      <publishTime>04/09/2021 12:00:56</publishTime>
+      <publishTime>04/13/2021 13:54:48</publishTime>
     </File>
   </ItemGroup>
 </Project>

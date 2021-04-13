@@ -191,6 +191,6 @@ F:\SITE\iShop_ht\Ishop_asp_mvc\iShop_ht\bin\ru\Microsoft.Owin.Security.Facebook.
 F:\SITE\iShop_ht\Ishop_asp_mvc\iShop_ht\bin\ru\Microsoft.Owin.Security.Google.resources.dll
 F:\SITE\iShop_ht\Ishop_asp_mvc\iShop_ht\bin\ru\Microsoft.Owin.Security.Twitter.resources.dll
 F:\SITE\iShop_ht\Ishop_asp_mvc\iShop_ht\bin\ru\Microsoft.Owin.Security.MicrosoftAccount.resources.dll
+F:\SITE\iShop_ht\Ishop_asp_mvc\iShop_ht\obj\Debug\iShop_ht.csprojResolveAssemblyReference.cache
 F:\SITE\iShop_ht\Ishop_asp_mvc\iShop_ht\obj\Debug\iShop_ht.dll
 F:\SITE\iShop_ht\Ishop_asp_mvc\iShop_ht\obj\Debug\iShop_ht.pdb
-F:\SITE\iShop_ht\Ishop_asp_mvc\iShop_ht\obj\Debug\iShop_ht.csprojResolveAssemblyReference.cache
