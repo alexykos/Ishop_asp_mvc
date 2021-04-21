@@ -1,13 +1,22 @@
 ﻿
-<div class="product">
+@{
+    ViewBag.Title = "Commodity";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
 
-    <div class="breadcrumbs">
-        <a href="\">Главная</a> <span class="arrow"></span>
-    </div><!-- .breadcrumbs -->
+<div id="ContentId">
 
-    @{foreach (var line in Model)
+
+    <div class="product">
+
+        <div class="breadcrumbs">
+            @*<a href="#">Главная</a> <span class="arrow"></span>*@
+            @Html.Action("breadcrumbs_tree", "Home")
+        </div><!-- .breadcrumbs -->
+
+        @{foreach (var line in Model)
             {
-            <h1 class="page-title">@line.Name</h1>
+                <h1 class="page-title">@line.Name</h1>
                 <div class="product__inner">
                     <div class="product__photo">
                         <div class="product__photo-big">
@@ -53,8 +62,10 @@
 
                     </div><!-- .product__main -->
                 </div><!-- .product__inner -->
+            }
         }
-    }
 
 
-</div><!-- .product -->
+    </div><!-- .product -->
+
+</div><!-- .ContentId -->

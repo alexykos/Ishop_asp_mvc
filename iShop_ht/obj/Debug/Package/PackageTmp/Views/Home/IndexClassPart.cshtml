@@ -6,18 +6,32 @@
 
 @*<h1></h1>*@
 
+<div class="sort">
+    <div class="sort__title">Сортировать по:</div>
+    <ul>
+        <li><a href="#">популярности</a></li>
+        <li><a href="#">@Ajax.ActionLink("Цене", "IndexClassPart", "Home", new { SortOrder = "Price" }, new AjaxOptions { UpdateTargetId = "ContentId" }) </a></li>
+        <li><a href="#">новинкам</a></li>
+    </ul>
+    <div class="sort__button flex">
+        <p class="sort__button_left sort__button_active"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMyIgaGVpZ2h0PSIxMyIgdmlld0JveD0iMCAwIDEzIDEzIiBmaWxsPSIjMmIyYjJiIj48cGF0aCBkPSJNMCAxMGgzdjNoLTN6TTUgMTBoOHYzaC04ek0wIDVoM3YzaC0zek01IDVoOHYzaC04ek0wIDBoM3YzaC0zek01IDBoOHYzaC04eiIvPjwvc3ZnPgo=" alt=""></p>
+        <p class="sort__button_right"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMyIgaGVpZ2h0PSIxMyIgdmlld0JveD0iMCAwIDEzIDEzIiBmaWxsPSIjMmIyYjJiIj48cGF0aCBkPSJNMCAwaDZ2NmgtNnpNNyAwaDZ2NmgtNnpNNyA3aDZ2NmgtNnpNMCA3aDZ2NmgtNnoiLz48L3N2Zz4K" alt=""></p>
+    </div>
+</div>
+
 <div class="breadcrumbs">
     @*<a href="#">Главная</a> <span class="arrow"></span>*@
     @Html.Action("breadcrumbs_tree", "Home")
 </div><!-- .breadcrumbs -->
+
 
 <div class="items">
     @{foreach (var line in Model)
         {
             <div class="item">
                 <div class="item__title">
-                    @*<a href="/Home/Commodity/@line.Code">@line.Name</a>*@
-                    @Ajax.ActionLink(@line.Name, "Commodity", "Home", new { Id = @line.Code }, new AjaxOptions { UpdateTargetId = "ContentId" })
+                    <a href="/Home/Commodity/@line.Code">@line.Name</a>
+                    @*@Ajax.ActionLink(@line.Name, "Commodity", "Home", new { Id = @line.Code }, new AjaxOptions { UpdateTargetId = "ContentId" })*@
                     
 
                 </div>

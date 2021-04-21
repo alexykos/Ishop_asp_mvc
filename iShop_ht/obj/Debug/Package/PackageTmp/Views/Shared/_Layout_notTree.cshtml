@@ -49,12 +49,18 @@
                 <div class="header__nav-toggle"></div>
                 <nav class="header__nav">
                     <ul>
-                        <li>@Ajax.ActionLink("О КОМПАНИИ", "About", "Home", new { }, new AjaxOptions { UpdateTargetId = "ContentId" })</li>
+                        <li><a href="/Home/About">О КОМПАНИИ</a></li>
+                        <li><a href="/Home/Pay">ОПЛАТА</a></li>
+                        <li><a href="/Home/Delivery">ДОСТАВКА</a></li>
+                        <li><a href="/Home/DeliveryYourself">САМОВЫВОЗ</a></li>
+                        <li><a href="/Home/Guarantee">ГАРАНТИЯ</a></li>
+                        <li><a href="/Home/Contacts">КОНТАКТЫ</a></li>
+                        @*<li>@Ajax.ActionLink("О КОМПАНИИ", "About", "Home", new { }, new AjaxOptions { UpdateTargetId = "ContentId" })</li>
                         <li>@Ajax.ActionLink("ОПЛАТА ", "Pay", "Home", new { }, new AjaxOptions { UpdateTargetId = "ContentId" })</li>
                         <li>@Ajax.ActionLink("ДОСТАВКА", "Delivery", "Home", new { }, new AjaxOptions { UpdateTargetId = "ContentId" })</li>
                         <li>@Ajax.ActionLink("САМОВЫВОЗ", "DeliveryYourself", "Home", new { }, new AjaxOptions { UpdateTargetId = "ContentId" })</li>
                         <li>@Ajax.ActionLink("ГАРАНТИЯ", "Guarantee", "Home", new { }, new AjaxOptions { UpdateTargetId = "ContentId" })</li>
-                        <li>@Ajax.ActionLink("КОНТАКТЫ", "Contacts", "Home", new { }, new AjaxOptions { UpdateTargetId = "ContentId" })</li>
+                        <li>@Ajax.ActionLink("КОНТАКТЫ", "Contacts", "Home", new { }, new AjaxOptions { UpdateTargetId = "ContentId" })</li>*@
 
                     </ul>
 
@@ -113,9 +119,10 @@
 
 
 
-
-                @RenderBody()
-            </div><!-- .middle -->
+                <div id="ContentId">
+                    @RenderBody()
+                </div>
+                </div><!-- .middle -->
 
             <footer class="footer">
 
@@ -123,12 +130,18 @@
 
                     <nav class="footer__nav">
                         <ul>
-                            <li>@Ajax.ActionLink("О КОМПАНИИ", "About", "Home", new { }, new AjaxOptions { UpdateTargetId = "ContentId" })</li>
+                            <li><a href="/Home/About">О КОМПАНИИ</a></li>
+                            <li><a href="/Home/Pay">ОПЛАТА</a></li>
+                            <li><a href="/Home/Delivery">ДОСТАВКА</a></li>
+                            <li><a href="/Home/DeliveryYourself">САМОВЫВОЗ</a></li>
+                            <li><a href="/Home/Guarantee">ГАРАНТИЯ</a></li>
+                            <li><a href="/Home/Contacts">КОНТАКТЫ</a></li>
+                            @*<li>@Ajax.ActionLink("О КОМПАНИИ", "About", "Home", new { }, new AjaxOptions { UpdateTargetId = "ContentId" })</li>
                             <li>@Ajax.ActionLink("ОПЛАТА ", "Pay", "Home", new { }, new AjaxOptions { UpdateTargetId = "ContentId" })</li>
                             <li>@Ajax.ActionLink("ДОСТАВКА", "Delivery", "Home", new { }, new AjaxOptions { UpdateTargetId = "ContentId" })</li>
                             <li>@Ajax.ActionLink("САМОВЫВОЗ", "DeliveryYourself", "Home", new { }, new AjaxOptions { UpdateTargetId = "ContentId" })</li>
                             <li>@Ajax.ActionLink("ГАРАНТИЯ", "Guarantee", "Home", new { }, new AjaxOptions { UpdateTargetId = "ContentId" })</li>
-                            <li>@Ajax.ActionLink("КОНТАКТЫ", "Contacts", "Home", new { }, new AjaxOptions { UpdateTargetId = "ContentId" })</li>
+                            <li>@Ajax.ActionLink("КОНТАКТЫ", "Contacts", "Home", new { }, new AjaxOptions { UpdateTargetId = "ContentId" })</li>*@
 
                         </ul>
                     </nav>

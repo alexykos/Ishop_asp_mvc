@@ -51,7 +51,7 @@ namespace iShop_ht.Controllers
             //return View(I_commodities.OrderBy(s => s.Price).ToPagedList(pageNumber, pageSize));
 
             //return PartialView(I_commodities);
-            return PartialView(I_commodities.ToPagedList(pageNumber, pageSize));
+            return View(I_commodities.ToPagedList(pageNumber, pageSize));
         }
 
         public ActionResult BestBook(int? ClassId)
@@ -223,7 +223,7 @@ namespace iShop_ht.Controllers
 
         }
 
-        public ActionResult About(int? Id)
+        public ActionResult About()
         {
             //if (Request.IsAjaxRequest())
             //{
@@ -231,7 +231,7 @@ namespace iShop_ht.Controllers
             //}
             var clss = StoreDB.Database.SqlQuery<I_class>("i_getClassForTree").ToList();
 
-            return PartialView(clss);
+            return View(clss);
             
         }
 
@@ -247,20 +247,20 @@ namespace iShop_ht.Controllers
 
         public ActionResult Pay()
         {
-           
-            return PartialView();
+
+            return View();
         }
 
         public ActionResult DeliveryYourself()
         {
 
-            return PartialView();
+            return View();
         }
 
         public ActionResult Guarantee()
         {
 
-            return PartialView();
+            return View();
         }
 
         [HttpGet]
@@ -283,19 +283,18 @@ namespace iShop_ht.Controllers
 
         }
        
-        public ActionResult Contacts(int id = 0)
+        public ActionResult Contacts()
         {
 
-            return PartialView();
-
+            return View(); 
         }
 
 
         [HttpGet]
-        public ActionResult Delivery(int id = 0)
+        public ActionResult Delivery()
         {
 
-            return PartialView();
+            return View();
 
         }
 
