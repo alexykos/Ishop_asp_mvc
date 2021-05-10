@@ -10,7 +10,6 @@ D:\SITE\iShop_ht\iShop_ht\bin\roslyn\System.Reflection.Metadata.dll
 D:\SITE\iShop_ht\iShop_ht\bin\roslyn\vbc.exe
 D:\SITE\iShop_ht\iShop_ht\bin\roslyn\VBCSCompiler.exe
 D:\SITE\iShop_ht\iShop_ht\bin\roslyn\VBCSCompiler.exe.config
-D:\SITE\iShop_ht\iShop_ht\bin\iShop_ht.dll.config
 D:\SITE\iShop_ht\iShop_ht\bin\iShop_ht.dll
 D:\SITE\iShop_ht\iShop_ht\bin\iShop_ht.pdb
 D:\SITE\iShop_ht\iShop_ht\bin\ActionMailer.Net.dll
@@ -194,3 +193,4 @@ F:\SITE\iShop_ht\Ishop_asp_mvc\iShop_ht\bin\ru\Microsoft.Owin.Security.Microsoft
 F:\SITE\iShop_ht\Ishop_asp_mvc\iShop_ht\obj\Debug\iShop_ht.csprojResolveAssemblyReference.cache
 F:\SITE\iShop_ht\Ishop_asp_mvc\iShop_ht\obj\Debug\iShop_ht.dll
 F:\SITE\iShop_ht\Ishop_asp_mvc\iShop_ht\obj\Debug\iShop_ht.pdb
+D:\SITE\iShop_ht\iShop_ht\bin\iShop_ht.dll.config
