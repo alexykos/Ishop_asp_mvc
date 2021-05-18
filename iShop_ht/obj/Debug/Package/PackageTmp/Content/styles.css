@@ -1596,10 +1596,10 @@ textarea.contacts-form__field {
 }
 /*-------------------------------------*/
 *{
-	-moz-transition: all 0.3s ease;
+	/*-moz-transition: all 0.3s ease;
 	-webkit-transition-property: all;
-	/*-webkit-transition-duration: 0.1s;*/
-	-webkit-transition-timing-function: ease;
+	-webkit-transition-duration: 0.3s;
+	-webkit-transition-timing-function: ease;*/
 }
 .flex{
 	-webkit-display:flex;
