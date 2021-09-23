@@ -57,7 +57,8 @@ namespace iShop_ht.Models
             if (cartItem == null)
             {
                 // Create a new cart item if no cart item exists
-                DateTime d = new DateTime(2008, 3, 9, 16, 5, 7, 123);
+                //DateTime d = DateTime.Now;
+                //new DateTime(2008, 3, 9, 16, 5, 7, 123);
                 //DateTime.Now;
                 //string dateString = d.ToString("yyyyMMddHHmmss").;
 
@@ -66,7 +67,7 @@ namespace iShop_ht.Models
                     I_commodityCode = i_commodity.Code,
                     CartId = ShoppingCartId,
                     Count = 1,
-                    DateCreated = d
+                    DateCreated = DateTime.Now
                 };
                 StoreDB.Carts.Add(cartItem);
             }

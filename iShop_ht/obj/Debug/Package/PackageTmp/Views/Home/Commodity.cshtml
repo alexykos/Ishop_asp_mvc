@@ -21,13 +21,14 @@
                     <div class="product__photo">
                         <div class="product__photo-big">
                             <img src='@Url.Action("GetImage", "Image", new { id = @line.Code, img = "300" } )' width="188" height="188" alt="" />
+                            <div class="item__sign_id">Артикул @line.Code.ToString()</div>
                         </div>
                         @*<div class="product__photo-big"><img src="http://imgholder.ru/280x220/D9C6C6" alt="" /></div>*@
-                        <div class="product__photo-thumbs">
+                        @*<div class="product__photo-thumbs">
                             <div class="thumb  active" data-big="http://imgholder.ru/280x220/D9C6C6"><img src="http://imgholder.ru/73/D9C6C6" width="73" height="73" alt="" /></div>
                             <div class="thumb" data-big="http://imgholder.ru/280x220/D7DBCA"><img src="http://imgholder.ru/73/D7DBCA" width="73" height="73" alt="" /></div>
                             <div class="thumb" data-big="http://imgholder.ru/280x220/CDDBE0"><img src="http://imgholder.ru/73/CDDBE0" width="73" height="73" alt="" /></div>
-                        </div><!-- .product__photo-thumbs -->
+                        </div>*@<!-- .product__photo-thumbs -->
                     </div><!-- .product__photo -->
                     <div class="product__main">
 

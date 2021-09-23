@@ -70,10 +70,18 @@ namespace iShop_ht.Models
         [RegularExpression(@"[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}",
         ErrorMessage = "Email is is not valid.")]
         [DataType(DataType.EmailAddress)]
-        public string Email { get { return email; } set { email = "alexykos@mail.ru"; } }
+        public string Email { get; set; }
         [ScaffoldColumn(false)]
         public decimal Total { get; set; }
 
+        [Timestamp]
+        public byte[] Stamp { get; set; }
+
+        public string Message { get; set; }
+
+        public int is_company { get; set; }
+
+        public int Dostavka { get; set; }
         public List<OrderDetail> OrderDetails { get; set; }
 
     }

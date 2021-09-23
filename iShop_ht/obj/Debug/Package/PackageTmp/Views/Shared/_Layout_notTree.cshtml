@@ -11,10 +11,11 @@
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 
-    <link href=@Url.Content("~/Content/styles.css") rel="stylesheet" />
+    
     <link href=@Url.Content("~/Content/PagedList.css") rel="stylesheet" />
     <link href=@Url.Content("~/Content/bootstrap.css") rel="stylesheet" />
     <link href=@Url.Content("~/Content/bootstrap.min.css") rel="stylesheet" />
+    <link href=@Url.Content("~/Content/styles.css") rel="stylesheet" />
 
     <link href=@Url.Content("~/scripts/callmewidget/style.min.css") rel="stylesheet" />
 
@@ -42,8 +43,8 @@
             <header class="header">
 
                 <a href="\" class="header__logo">
-                    <div class="header__logo-title">Гипертрейд</div>
-                    <div class="header__logo-desc">техника и компьютерные комплектующие</div>
+                    @*<div class="header__logo-title">&nbsp;</div>*@
+                    <div class="header__logo-desc">техника и компьютерные <br> комплектующие</div>
                 </a>
 
                 <div class="header__nav-toggle"></div>
@@ -68,7 +69,7 @@
 
 
                 <div class="header__phone">
-                    <div class="header__phone-number">8 (499) 558-08-99;</div>
+                    <div class="header__phone-number">8 (499) 558-08-99</div>
                     <div class="header__phone-number">8 (495) 789-52-39</div>
                 </div>
 
@@ -160,10 +161,15 @@
                 <div class="footer__bottom">
 
                     <div class="footer__copyright">
-                        ВНИМАНИЕ! Информация о ценах товара и комплектации, указанная на сайте, не является публичной офертой, определяемой положениями Статей 435 и 437 Гражданского кодекса РФ, и носит информационный характер.<br />
-                        Цена действительна только при заказе оформленном на сайте магазина. Цена розничной сети может отличаться. Xарактеристики, комплект поставки и внешний вид данного товара могут отличаться от указанных или могут быть изменены производителем без отражения в каталоге компании Гипер Трейд.<br />
-                        Подтверждение наличия товара при заказе, размера, стоимости товара и условий доставки согласовываются с  менеджером магазина Гипер Трей.
-
+                        Нажимая на кнопку «Оформить заказ», я даю разрешение ИП Даудов Рустам Ховашевич<br />
+                        в целях заключения и исполнения договора купли-продажи обрабатывать - собирать, записывать, систематизировать, накапливать,<br />
+                        хранить, уточнять (обновлять, изменять), извлекать, использовать, передавать (в том числе поручать обработку другим лицам),<br />
+                        обезличивать, блокировать, удалять, уничтожать - мои персональные данные: фамилию, имя, номера домашнего и мобильного<br />
+                        телефонов, адрес электронной почты. Согласие может быть отозвано мною в любой момент путем направления письменного<br />
+                        уведомления по адресу ИП Даудов Рустам Ховашевич. Ознакомиться с 
+                        <a href=@Url.Content("~/Content/download/politicData.docx")>политикой персональных данных.</a>
+                        
+                         <br />
                     </div>
 
                     <div class="footer__contacts">
@@ -172,7 +178,7 @@
                         <p>
                             Телефоны: <span class="footer__contacts-phones">
                                 <br /><a href="tel:+74959759280">+7 (495) 975-92-80</a>
-                                <br />, <a href="tel:+74995580899">+7 (499) 558-08-99</a>
+                                <br /><a href="tel:+74995580899">+7 (499) 558-08-99</a>
                             </span>
                         </p>
                         <p>

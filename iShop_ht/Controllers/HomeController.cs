@@ -111,6 +111,17 @@ namespace iShop_ht.Controllers
             //    int a = 1;
             //}
 
+            int isTop = 0;
+
+            if (ClassId == null & page == null & SortOrder == "" & SearchGoods == "")
+            {
+                TempData.Remove("currentClass");
+                TempData.Remove("currentSortOrder");
+                TempData.Remove("searchGoodsFilt");
+                TempData.Remove("lastSortOrder");
+                isTop = 1;
+            }
+
             string currentSortOrder = "";
             string lastSortOrder;
             string searchGoodsFilt = "";
@@ -264,8 +275,11 @@ namespace iShop_ht.Controllers
         }
 
         [HttpGet]
-        public ActionResult Commodity(int id = 0)
+        public ActionResult Commodity(int id = 0, int code = 0)
         {
+            //code параметр старой ссылки descr.aspx?code=249332
+            if (code != 0 & id == 0) id = code; 
+
             /*
             var commodity2 = from cm in StoreDB.I_commodities
                              join img in StoreDB.I_images on cm.Code equals img.Upcode into im
@@ -282,7 +296,9 @@ namespace iShop_ht.Controllers
             return PartialView(commodity2);
 
         }
-       
+
+    
+
         public ActionResult Contacts()
         {
 
