@@ -201,6 +201,7 @@
     <Compile Include="Models\Ishop_Entities.cs" />
     <Compile Include="Models\I_class.cs" />
     <Compile Include="Models\I_commodity.cs" />
+    <Compile Include="Models\I_delivery.cs" />
     <Compile Include="Models\I_image.cs" />
     <Compile Include="Models\Order.cs" />
     <Compile Include="Models\OrderDetail.cs" />
@@ -212,6 +213,7 @@
     <Compile Include="ViewModels\ShoppingCartRemoveViewModel.cs" />
     <Compile Include="ViewModels\ShoppingCartViewModel.cs" />
     <Compile Include="ViewModels\ShoppingOrderEmailViewModel.cs" />
+    <Compile Include="ViewModels\xmlprice.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
@@ -281,6 +283,7 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Commodity.cshtml" />
     <Content Include="Views\Home\Contacts.cshtml" />
+    <Content Include="Views\Home\test_xml.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

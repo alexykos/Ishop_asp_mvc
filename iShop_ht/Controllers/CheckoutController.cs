@@ -18,6 +18,10 @@ namespace iShop_ht.Controllers
         // GET: /Checkout/AddressAndPayment
         public ActionResult AddressAndPayment()
         {
+            ViewData["Deliveries"] = from dlvr in StoreDB.I_deliveries
+                                     where dlvr.Disabled != true
+                                     orderby dlvr.Sort
+                                    select new SelectListItem { Text = dlvr.Name, Value = dlvr.Code.ToString()};
             return View();
         }
         //
@@ -123,8 +127,34 @@ namespace iShop_ht.Controllers
                                   where ord.OrderId == id
                                   select (int?)ord.Quantity *
                                   ord.Price).Sum();
-                ViewData["orderTotal"] = String.Format("{0:### ### ###}", total);
+                /*decimal? DeliveryCost = (from ord in StoreDB.Orders
+                            where ord.OrderId == id
+                            join delivery in StoreDB.I_deliveries on ord.Delivery equals delivery.Code into deliveryEmpty
+                            from delivery in deliveryEmpty.DefaultIfEmpty()
+                            select (decimal?)(delivery == null ? 0 : delivery.Price)).Sum();
+                */
+                var deliveryVar = (from ord in StoreDB.Orders
+                                         where ord.OrderId == id
+                                         join delivery in StoreDB.I_deliveries on ord.Delivery equals delivery.Code into deliveryEmpty
+                                         from delivery in deliveryEmpty.DefaultIfEmpty()
+                                         select new {Name = delivery ==null ? "": delivery.Name
+                                                    , Price = delivery == null ? 0 : delivery.Price }
+                                  );
+
+                string deliveryName = "";
+                decimal deliveryPrice = 0;
+                foreach (var dlvr in deliveryVar)
+                {
+                    deliveryName = dlvr.Name;
+                    deliveryPrice = dlvr.Price;
+                }
+
+
+
+                ViewData["orderTotal"] = String.Format("{0:### ### ###}", total + deliveryPrice);
                 ViewData["orderId"] = id;
+                ViewData["deliveryName"] = deliveryName;
+                ViewData["deliveryPrice"] = String.Format("{0:### ### ###}", deliveryPrice);
                 IEnumerable<OrderDetail> OrderDetails = StoreDB.OrderDetails.Where(x => x.OrderId == id);
                 return View(OrderDetails);
             }

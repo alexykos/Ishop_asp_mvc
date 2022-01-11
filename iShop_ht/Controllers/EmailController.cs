@@ -19,7 +19,7 @@ namespace iShop_ht.Controllers
         {
             To.Add(model.To);
 
-            From = "alextestsendmail@mail.ru";//model.From;
+            From = "info@ht-comp.ru";//model.From; //"alextestsendmail@mail.ru";//
 
             Subject = "Спасибо за заказ.";//model.Subject;
 
@@ -35,8 +35,31 @@ namespace iShop_ht.Controllers
                               where ord.OrderId == orderId
                               select (int?)ord.Quantity *
                               ord.Price).Sum();
-            ViewData["orderTotal"] = String.Format("{0:### ### ###}", total) ;
+
+            var deliveryVar = (from ord in StoreDB.Orders
+                               where ord.OrderId == orderId
+                               join delivery in StoreDB.I_deliveries on ord.Delivery equals delivery.Code into deliveryEmpty
+                               from delivery in deliveryEmpty.DefaultIfEmpty()
+                               select new
+                               {
+                                   Name = delivery == null ? "" : delivery.Name
+                                          ,
+                                   Price = delivery == null ? 0 : delivery.Price
+                               }
+                                  );
+
+            string deliveryName = "";
+            decimal deliveryPrice = 0;
+            foreach (var dlvr in deliveryVar)
+            {
+                deliveryName = dlvr.Name;
+                deliveryPrice = dlvr.Price;
+            }
+
+            ViewData["orderTotal"] = String.Format("{0:### ### ###}", total + deliveryPrice) ;
             ViewData["orderiD"] = orderId;
+            ViewData["deliveryName"] = deliveryName;
+            ViewData["deliveryPrice"] = String.Format("{0:### ### ###}", deliveryPrice);
             IEnumerable<OrderDetail> OrderDetails = StoreDB.OrderDetails.Where(x => x.OrderId == orderId);
 
             return Email("SendEmail", OrderDetails);

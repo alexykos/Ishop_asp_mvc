@@ -34,7 +34,7 @@
                         </label>
                         <label class="registration__klient_label registration__klient_label2 flex">
                             <input type="radio" name="is_company" id="customerType2" value="1">
-                            <span>Организация</span>
+                            <span>Организация (+10%)</span>
                         </label>
                     </div>
                 </li>
@@ -45,7 +45,7 @@
                         <ul>
                             <li>
                                 <p class="registration__name2">Название компании <span>*</span></p>
-                                <input class="registration__input" name="company" type="text">
+                                <input class="registration__input" name="company_name" type="text">
                             </li>
                             <li>
                                 <p class="registration__name2">ИНН <span>*</span></p>
@@ -57,7 +57,7 @@
                             </li>
                             <li>
                                 <p class="registration__name2">Юридический адрес<span>*</span></p>
-                                <input class="registration__input" name="juraddr" type="text">
+                                <input class="registration__input" name="Legal_Address" type="text">
                             </li>
                             <li>
                                 <p class="registration__name2">Название банка<span>*</span></p>
@@ -83,17 +83,17 @@
                 
                         <div class="registration__delivery flex">
                         <label class="registration__delivery_label registration__delivery_label1 flex">
-                            <input type="radio" name="delivery" id="deliveryMySelfAaP" checked>
+                            <input type="radio" name="delivery_type" id="deliveryMySelfAaP" checked>
                             <span>Самовывоз</span>
                         </label>
                         <label class="registration__delivery_label registration__delivery_label1 flex">
-                            <input type="radio" name="delivery" id="deliveryAaP">
+                            <input type="radio" name="delivery_type" id="deliveryAaP">
                             <span>Доставка</span>
                         </label>
                     </div>
                 
                     <div class="delivery flex">
-                        <select name="dostavka" class="dostavka__select" disabled>
+                        @*<select name="delivery" class="dostavka__select" disabled>
                             <option selected = "selected" value="195032">Самовывоз ВКЦ "Савеловский", пав. F63 (бесплатно)</option>
                             <option value="202373">Курьерская служба EMS (стоимость рассчитывается по тарифам компании), при 100% предоплате</option>
                             <option value="225005">Доставка до Московского терминала ТК "СДЭК" (вес до 20 кг) 200 руб, при 100% предоплате</option>
@@ -103,8 +103,22 @@
                             <option value="207483">Доставка до Московского терминала ТК "Деловые Линии" (вес до 20 кг) 400 руб, при 100% предоплате</option>
                             <option value="16777">Доставка по Москве в пределах МКАД сегодня (вес до 10 кг) 500 руб, оплата при получении</option>
                             <option value="227980">Доставка по Москве в пределах МКАД срочная сегодня (вес до 10 кг) 600 руб, оплата при получении</option>
+                        </select>*@
+                        
+                        @*@Html.DropDownListFor(m => m.Delivery,
+                        (IEnumerable<SelectListItem>
+                            ) ViewData["Deliveries"], "Самовывоз ВКЦ  пав. F63 (бесплатно)"
+                            , htmlAttributes: new { @class = "dostavka__select",@disabled = true })*@
+                       
+                        <select name="delivery" class="dostavka__select" disabled>
+                            @foreach (var option in ViewData["Deliveries"] as IEnumerable<SelectListItem>)
+                            {
+                                <option value="@option.Value" @(option.Value == "195032" ? "selected='selected'" : "")>@option.Text</option>
+                                @*<option value="@option.Value" @(option.Value == ViewBag.ValueToSet ? "selected='selected'" : "")>@option.Text</option>*@
+                            }
                         </select>
-                    </div>
+
+</div>
                 </li>
                 <li class="address">
                     <p class="registration__name">Адрес доставки</p>
@@ -160,7 +174,7 @@
                 </li>
                 <li>
                     <p class="registration__name">Контактная информация</p>
-                    <textarea name="message" placeholder="" class="message__block"></textarea>
+                    <textarea name="Contact_info" placeholder="" class="message__block"></textarea>
                 </li>
             </ul>
             @*@Html.EditorForModel()*@

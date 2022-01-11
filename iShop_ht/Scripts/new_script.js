@@ -1,6 +1,11 @@
 $(document).ready(function(){
 	$('.new__li').click(function() {
 		$(this).toggleClass('expandable');
+		if(!$('.slider').hasClass('slidernon')){
+		console.log('111');
+		$('.slider').addClass('slidernon');
+		}
+		
 		return false;
 	});
 	$('.sort__button_left').click(function() {

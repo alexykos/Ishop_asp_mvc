@@ -12,6 +12,8 @@ namespace iShop_ht.Models
         public DbSet<I_class> I_classes { get; set; }
         public DbSet<I_commodity> I_commodities { get; set; }
 
+        public DbSet<I_delivery> I_deliveries { get; set; }
+
         public DbSet<I_image> I_images { get; set; }
 
         public DbSet<Order> Orders { get; set; }

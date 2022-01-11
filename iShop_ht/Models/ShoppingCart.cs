@@ -186,7 +186,7 @@ namespace iShop_ht.Models
                 {
                     I_commodity_Code = item.I_commodityCode,
                     OrderId = order.OrderId,
-                    Price = item.I_commodity.Price,
+                    Price = (order.is_company == 0 ? item.I_commodity.Price : item.I_commodity.Price2),
                     Quantity = item.Count
                 };
                 // Set the order total of the shopping cart

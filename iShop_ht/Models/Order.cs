@@ -12,9 +12,6 @@ namespace iShop_ht.Models
     public partial class Order
     {
 
-        string email;
-
-
         [ScaffoldColumn(false)]
         public int OrderId { get; set; }
         [ScaffoldColumn(false)]
@@ -81,7 +78,7 @@ namespace iShop_ht.Models
 
         public int is_company { get; set; }
 
-        public int Dostavka { get; set; }
+        public int Delivery { get; set; } = 195032;
         public List<OrderDetail> OrderDetails { get; set; }
 
     }

@@ -228,8 +228,13 @@ font-family: 'PT Sans', serif;
 }
 .slider {
 	position: relative;
-	margin: 0 0 27px;
+	margin: 0 0 10px;
 }
+.slidernon {
+	display: none;
+}
+
+
 .slider .slick-prev,
 .slider .slick-next {
 	position: absolute;
@@ -531,7 +536,7 @@ font-family: 'PT Sans', serif;
 	background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAABCAYAAAD9yd/wAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAABpJREFUeNpiePr06X4g/g+i////zwDDAAEGAAItE4LL0pyWAAAAAElFTkSuQmCC') repeat-x;
 }
 .breadcrumbs {
-	margin: 0 0 20px;
+	margin: 0 0 5px;
 }
 .breadcrumbs a {
 	color: #AFAFAF;
@@ -603,8 +608,8 @@ width:200px;vertical-align:middle;}
 	display: -webkit-flex;
 	display: -ms-flexbox;
 	display: flex;
-	margin: -5px 0 15px;
-	padding: 0 0 14px;
+	margin: -5px 0 5px;
+	padding: 0 0 0px;
 	background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAABCAYAAAD9yd/wAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAABpJREFUeNpiePr06X4g/g+i////zwDDAAEGAAItE4LL0pyWAAAAAElFTkSuQmCC') repeat-x 0 100%;
 	color: #787878;
 }
@@ -625,7 +630,7 @@ width:200px;vertical-align:middle;}
 	color: #F15C15;
 }
 .page-title {
-	margin: 0 0 18px;
+	margin: 0 0 2px;
 	font-size: 20px;
 	font-weight: bold;
 	color: #000;
@@ -835,7 +840,7 @@ textarea.contacts-form__field {
 	margin: 0 0 14px;
 }
 .entry ul {
-	margin: 0 0 18px;
+	margin: 0 0 0px;
 	-webkit-column-count: 1;
 	-moz-column-count: 1;
 	column-count: 1;

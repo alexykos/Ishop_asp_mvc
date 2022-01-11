@@ -44,6 +44,27 @@
 
                         </div><!-- .checkout-item -->
                     }
+
+                    @* доставка *@
+
+                    <div class="checkout-item" style="display: table-row;">
+                        <div class="checkout-item__title" style="display: table-cell;padding: 35px 30px 0 0;color:black;">
+                            @ViewData["deliveryName"]
+                        </div>
+                        <div class="checkout-item__number" style="display: table-cell;width: 20%;white-space: nowrap;">
+                        </div>
+                        <div class="checkout-item__price" style="display: table-cell;	width: 25%;	text-align: center;">
+                            Цена:
+                            <span class="number" style="font-weight: bold;color: #000;">
+                                <span style="font-size: 16px;">
+                                    @ViewData["deliveryPrice"]
+                                </span>
+                                руб.
+                            </span>
+                        </div>
+
+                    </div><!-- .checkout-item -->
+
                 </div><!-- .checkout__items -->
 
                                 <div class="checkout__items" style="display: table-row;	">&nbsp;</div>

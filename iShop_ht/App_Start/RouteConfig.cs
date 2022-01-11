@@ -31,6 +31,11 @@ namespace iShop_ht
                    ,code = UrlParameter.Optional
                  });
 
+            routes.MapRoute(
+                   "ya_xml_new"
+                   , "xml/ya_xml_new.aspx"
+                   , new { controller = "Home", action = "ya_xml_new", id = UrlParameter.Optional }
+              );
 
             routes.MapRoute(
                 name: "Default",

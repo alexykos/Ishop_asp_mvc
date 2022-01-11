@@ -14,6 +14,8 @@ namespace iShop_ht.Models
 
         public decimal Price { get; set; }
 
+        public decimal Price2 { get; set; }
+
         public int I_class_code { get; set; }
 
         public bool is_top { get; set; }

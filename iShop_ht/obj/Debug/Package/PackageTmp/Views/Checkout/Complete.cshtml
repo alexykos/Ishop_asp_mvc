@@ -33,6 +33,14 @@
             </div><!-- .checkout-item -->
 
         }
+        @* доставка *@
+        <div class="checkout-item">
+            <div class="checkout-item__title">@ViewData["deliveryName"]</div>
+            <div class="checkout-item__number">
+          
+            </div>
+            <div class="checkout-item__price">Цена: <span class="number"><span>@ViewData["deliveryPrice"]</span> руб.</span></div>
+        </div><!-- .checkout-item -->
     </div> <!--checkout__items-->
     <div class="checkout__bottom">
         <div class="checkout__total">Итого: <span class="number"><span> @ViewData["orderTotal"]</span></span><span class="rubl"> &#8399;</span></div>

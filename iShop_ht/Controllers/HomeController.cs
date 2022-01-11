@@ -7,6 +7,11 @@ using System.Web;
 using System.Web.Mvc;
 using PagedList.Mvc;
 using PagedList;
+using System.Xml.Linq;
+using System.Text;
+using System.Xml;
+using System.Data.SqlClient;
+using System.Data;
 
 namespace iShop_ht.Controllers
 {
@@ -111,15 +116,14 @@ namespace iShop_ht.Controllers
             //    int a = 1;
             //}
 
-            int isTop = 0;
-
+           
             if (ClassId == null & page == null & SortOrder == "" & SearchGoods == "")
             {
                 TempData.Remove("currentClass");
                 TempData.Remove("currentSortOrder");
                 TempData.Remove("searchGoodsFilt");
                 TempData.Remove("lastSortOrder");
-                isTop = 1;
+                
             }
 
             string currentSortOrder = "";
@@ -205,7 +209,7 @@ namespace iShop_ht.Controllers
                     return PartialView(I_commodities.OrderByDescending(s => s.Price).ToPagedList(pageNumber, pageSize));
                     
                 default:
-                    return PartialView(I_commodities.OrderBy(s => s.Price).ToPagedList(pageNumber, pageSize));
+                    return PartialView(I_commodities.ToPagedList(pageNumber, pageSize));
                     
             }
            
@@ -244,6 +248,33 @@ namespace iShop_ht.Controllers
 
             return View(clss);
             
+        }
+
+        public ActionResult ya_xml_new()
+        {
+
+            //return Redirect("http://95.213.179.235:8081/xml/ya_xml_new.aspx");
+
+            XmlDocument doc = new XmlDocument();
+            //doc.LoadXml(input);
+            SqlParameter param = new SqlParameter("Ya_xml", "");
+            param.Direction = ParameterDirection.Output;
+            param.Size = Int32.MaxValue;
+            param.DbType = DbType.String;
+            var result = StoreDB.Database.SqlQuery<object>("EXEC i_getxml_YA @Ya_xml = @Ya_xml output", param);
+            var x = result.FirstOrDefault();
+            string IXml = param.Value.ToString();
+            return this.Content(IXml, "text/xml");
+
+        }
+
+        public ActionResult test_xml()
+        {
+
+            ViewBag.I_ya_xml = StoreDB.Database.SqlQuery<I_commodity>("i_get_ya_xml").ToList();
+
+            return View();
+
         }
 
 
@@ -335,6 +366,44 @@ namespace iShop_ht.Controllers
             var I_classes = StoreDB.Database.SqlQuery<I_class>("GetBreadcrumbs_tree	@currentClass", param);
 
             return PartialView(I_classes);
+        }
+
+        public ActionResult GetHtml()
+        {
+            XDocument xDoc = new XDocument(
+          new XDeclaration("1.0", "UTF-8", null),
+           new XElement("Employees",
+                  new XElement("Employee",
+                      new XComment("DevCurry.com Employees"),
+                      new XElement("EmpId", "1"),
+                      new XElement("Name", "Kathy"),
+                      new XElement("Sex", "Female")
+                  )));
+
+
+         
+            return this.Content(xDoc.ToString(), "text/xml");
+        }
+
+        public class HtmlResult : ActionResult
+        {
+            private string htmlCode;
+            public HtmlResult(string html)
+            {
+                //var I_classes = StoreDB.Database.SqlQuery("i_getxml_YA");
+                //.SqlQuery<I_class>("GetBreadcrumbs_tree	@currentClass");
+                htmlCode = html;
+            }
+            public override void ExecuteResult(ControllerContext context)
+            {
+                string fullHtmlCode = "<!DOCTYPE html><html><head>";
+                fullHtmlCode += "<title>Главная страница</title>";
+                fullHtmlCode += "<meta charset=utf-8 />";
+                fullHtmlCode += "</head> <body>";
+                fullHtmlCode += htmlCode;
+                fullHtmlCode += "</body></html>";
+                context.HttpContext.Response.Write(fullHtmlCode);
+            }
         }
 
     }
